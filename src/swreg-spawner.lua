@@ -90,7 +90,7 @@ __bundle_register("__root", function(require, _LOADED, __bundle_register, __bund
 ----#include ui/fleetSpawner
 function onClick_ToggleUI(player, _, idValue)
     isMinimized = UI.getAttribute("armadaDisplay", "height")=="30"
-    switchToCloud = UI.getValue("spawnerTitle")=="GC Army Spawner" and idValue=="cloudBtn"
+    switchToCloud = UI.getValue("spawnerTitle")=="SWREG Army Spawner" and idValue=="cloudBtn"
     switchToSpawn = UI.getValue("spawnerTitle")=="Armada Score Reporter" and idValue=="minimizeBtn"
     if isMinimized or switchToCloud or switchToSpawn then
         UI.show("spawnerTitle")
@@ -103,7 +103,7 @@ function onClick_ToggleUI(player, _, idValue)
             UI.show("fleetSpawnerPanel")
             UI.hide("gameReporterPanel")
             UI.show("tabContainer")
-            UI.setValue("spawnerTitle","GC Army Spawner")
+            UI.setValue("spawnerTitle","SWREG Army Spawner")
             UI.setAttribute("spawnerTitle","color","white")
             UI.setAttribute("minimizeBtn", "colors", "transparent|#803030|#800000|transparent")
             UI.setAttribute("minimizeBtn", "tooltip", "Minimize")
@@ -116,7 +116,7 @@ function onClick_ToggleUI(player, _, idValue)
             UI.setValue("spawnerTitle","Armada Score Reporter")
             UI.setAttribute("spawnerTitle","color","#FFA040")
             UI.setAttribute("minimizeBtn", "colors", "transparent|#308030|#008000|transparent")
-            UI.setAttribute("minimizeBtn", "tooltip", "Show GC Army Spawner")
+            UI.setAttribute("minimizeBtn", "tooltip", "Show SWREG Army Spawner")
             UI.setAttribute("cloudBtn", "colors", "transparent|#803030|#800000|transparent")
             UI.setAttribute("cloudBtn", "tooltip", "Minimize")
         end
@@ -134,7 +134,7 @@ function onClick_ToggleUI(player, _, idValue)
         UI.setAttribute("armadaDisplay", "height", "30")
         UI.setAttribute("armadaDisplay", "width", "0")
         UI.setAttribute("minimizeBtn", "colors", "transparent|#308030|#008000|transparent")
-        UI.setAttribute("minimizeBtn", "tooltip", "Show GC Army Spawner")
+        UI.setAttribute("minimizeBtn", "tooltip", "Show SWREG Army Spawner")
         UI.setAttribute("cloudBtn", "colors", "transparent|#308030|#800000|transparent")
         UI.setAttribute("cloudBtn", "tooltip", "Show ScoreReporting")
         UI.setAttribute("shortTitle","alignment","MiddleCenter")
@@ -1608,7 +1608,8 @@ end
 
 ----#include ui/fleetSpawner
 
-CUSTOM_ASSETS = '{verifycache}https://raw.githubusercontent.com/spacenavy90/GC-TTS/refs/heads/master/'
+CUSTOM_ASSETS = '{verifycache}https://starwarsregiment.com/tts/SWREG-TTS/'
+--CUSTOM_ASSETS = '{verifycache}https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/'
 ASSETS_ROOT = 'https://raw.githubusercontent.com/valadian/TabletopSimulatorIncludeDir/master/TTS_armada/assets/'
 
 DEF_BRACE = '79d121'
@@ -1690,6 +1691,31 @@ function Ship:new (o,...)
     Cache(SHIPS,o)
     return o
 end
+Hero = {
+    collider = CUSTOM_ASSETS..'bases/cir_25.obj',
+}
+Infantry = {
+    collider = CUSTOM_ASSETS..'bases/cir_32.obj',
+}
+HeavyInfantry = {
+    collider = CUSTOM_ASSETS..'bases/cir_40.obj',
+}
+LightVehicle = {
+    collider = CUSTOM_ASSETS..'bases/sq_30.obj',
+}
+Vehicle = {
+    collider = CUSTOM_ASSETS..'bases/sq_40.obj',
+}
+LargeVehicle = {
+    collider = CUSTOM_ASSETS..'bases/sq_60.obj',
+}
+LongVehicle = {
+    collider = CUSTOM_ASSETS..'bases/rec_50x25.obj',
+}
+MassiveVehicle = {
+    collider = CUSTOM_ASSETS..'bases/rec_50x75.obj',
+}
+
 Hero = {
     collider = CUSTOM_ASSETS..'bases/cir_25.obj',
 }
@@ -2231,6 +2257,43 @@ function onload()
 -- 	aliases = {"Venator II Star Destroyer (imp)", "Venator II (imp)"},
 --     command = 3
 -- })
+    --self.interactable = true
+
+-- REBEL_SHIP = {
+--     back =      ASSETS_ROOT.."ships/rebel/card_back.jpg",
+--     faction = "Rebellion"
+-- }
+-- Ship:new(SmallShip,REBEL_SHIP,{
+-- 	name = "GR-75 Medium Transports",
+--     front =     ASSETS_ROOT.."ships/rebel/gr75/transport_card.jpg",
+--     mesh =      ASSETS_ROOT.."ships/rebel/gr75/mesh.obj",
+--     diffuse =   ASSETS_ROOT.."ships/rebel/gr75/transport_diffuse.jpg",
+--     ruler =     ASSETS_ROOT.."ships/rebel/gr75/ruler.obj",
+--     maneuver = {{"II"},{"I","II"},{"-","I","II"}},
+--     defense_tokens = {DEF_SCATTER, DEF_EVADE},
+--     shields = {1,1,1,1},
+--     cost = 18,
+--     aliases = {},
+--     command = 1
+-- })
+
+-- EMPIRE_SHIP = {
+--     back = ASSETS_ROOT.."ships/empire/card_back.jpg",
+--     faction = "Empire"
+-- }
+-- Ship:new(LargeShip,EMPIRE_SHIP,{
+-- 	name = "Venator II-class Star Destroyer (imp)",
+--     front =     ASSETS_ROOT.."ships/empire/venator/II_card.jpg",
+--     mesh =      ASSETS_ROOT.."ships/republic/venator/mesh.obj",
+--     diffuse =   CUSTOM_ASSETS.."ships/empire/venator/ven_update_diffuse.jpg",
+--     ruler =     ASSETS_ROOT.."ships/republic/venator/ruler.obj",
+--     maneuver = {{"I"},{"I","I"},{"-","I","-"}},
+--     defense_tokens = {DEF_BRACE,DEF_REDIRECT,DEF_CONTAIN,DEF_SALVO},
+--     shields = {4,3,3,2},
+--     cost = 100,
+-- 	aliases = {"Venator II Star Destroyer (imp)", "Venator II (imp)"},
+--     command = 3
+-- })
 
 ----#include defs/empire/ships
     local ship = nil
@@ -2238,15 +2301,21 @@ function onload()
 ----#include defs/rebel/squadrons
 REBEL_UNIT = {
     back =      CUSTOM_ASSETS .."units/reb/card_back.jpg",
+REBEL_UNIT = {
+    back =      CUSTOM_ASSETS .."units/reb/card_back.jpg",
     faction = "Rebellion"
 }
 bwing = {
+    mesh =      CUSTOM_ASSETS.."squadrons/rebel/bwing/bo_model.obj",
     mesh =      CUSTOM_ASSETS.."squadrons/rebel/bwing/bo_model.obj",
     health = 5,
     move = 2,
     defense_tokens = {}}
 Squadron:new(bwing, REBEL_UNIT, {
+Squadron:new(bwing, REBEL_UNIT, {
 	name = "B-wing Squadron",
+    front =     CUSTOM_ASSETS.."squadrons/rebel/bwing/base_card.jpg",
+    diffuse =   CUSTOM_ASSETS.."squadrons/rebel/bwing/base_diffuse.jpg",
     front =     CUSTOM_ASSETS.."squadrons/rebel/bwing/base_card.jpg",
     diffuse =   CUSTOM_ASSETS.."squadrons/rebel/bwing/base_diffuse.jpg",
     cost = 14,
@@ -2255,20 +2324,48 @@ Squadron:new(bwing, REBEL_UNIT, {
 
 EMPIRE_UNIT = {
     back = CUSTOM_ASSETS.."units/imp/card_back.jpg",
+
+EMPIRE_UNIT = {
+    back = CUSTOM_ASSETS.."units/imp/card_back.jpg",
     faction = "Empire"
 }
 tie = {
+    mesh =      CUSTOM_ASSETS.."squadrons/empire/tie/sw_model.obj",
     mesh =      CUSTOM_ASSETS.."squadrons/empire/tie/sw_model.obj",
     health = 3,
     move = 4,
     defense_tokens = {}}
 Squadron:new(tie, EMPIRE_UNIT, {
+Squadron:new(tie, EMPIRE_UNIT, {
 	name = "TIE Fighter Squadron",
+    front =     CUSTOM_ASSETS.."squadrons/empire/tie/base_card.jpg",
+    diffuse =   CUSTOM_ASSETS.."squadrons/empire/tie/base_diffuse.jpg",
     front =     CUSTOM_ASSETS.."squadrons/empire/tie/base_card.jpg",
     diffuse =   CUSTOM_ASSETS.."squadrons/empire/tie/base_diffuse.jpg",
     cost = 8,
     aliases = {"TIE Fighter Squadrons", "TIE Fighter"}
 })
+
+-- REPUBLIC_SHIP = {
+--     back =      ASSETS_ROOT.."ships/republic/card_back.jpg",
+--     faction = "Republic"
+-- }
+
+-- Ship:new(SmallShip,REPUBLIC_SHIP,{
+-- 	name = "Consular-class Armed Cruiser",
+--     front =     ASSETS_ROOT.."ships/republic/consular/armed_card.jpg",
+--     -- back =      ASSETS_ROOT.."ships/republic/consular/armed_card_orig_back.jpg",
+--     mesh =      ASSETS_ROOT.."ships/republic/consular/mesh.obj",
+--     diffuse =   ASSETS_ROOT.."ships/republic/consular/armed_diffuse.jpg",
+--     ruler =     ASSETS_ROOT.."ships/republic/consular/ruler.obj",
+--     maneuver = {{"II"},{"II","I"},{"I","I","I"},{"I","-","I","I"}},
+--     defense_tokens = {DEF_EVADE, DEF_REDIRECT, DEF_CONTAIN},
+--     shields = {2,2,2,1},
+--     cost = 37,
+-- 	aliases = {"Consular Armed Cruiser","Armed Cruiser"},
+--     command = 1
+-- })
+
 
 -- REPUBLIC_SHIP = {
 --     back =      ASSETS_ROOT.."ships/republic/card_back.jpg",
@@ -2311,19 +2408,22 @@ Ship:new(SmallShip,SEPARATIST_SHIP,{
 
 REPUBLIC_UNIT = {
     back =      CUSTOM_ASSETS.."units/gar/card_back.jpg",
+
+REPUBLIC_UNIT = {
+    back =      CUSTOM_ASSETS.."units/gar/card_back.jpg",
     faction = "Republic"
 } 
 
-Squadron:new(Infantry, REPUBLIC_UNIT, {
-	name = "Clone Trooper Squad",
-    mesh =      CUSTOM_ASSETS.."units/gar/clone_p1/clone_p1_mesh.obj",
-    diffuse =   CUSTOM_ASSETS.."units/gar/clone_p1/clone_p1_diffuse.jpg",
-    front =     CUSTOM_ASSETS.."units/imp/stormtrooper/stormtrooper-card.jpg",
-    cost = 15,
-    aliases = {''},
-    health = 4,
-    move = 3,
-})
+-- Squadron:new(Infantry, REPUBLIC_UNIT, {
+-- 	name = "Clone Trooper Squad",
+--     mesh =      CUSTOM_ASSETS.."units/gar/clone_p1/clone_p1_mesh.obj",
+--     diffuse =   CUSTOM_ASSETS.."units/gar/clone_p1/clone_p1_diffuse.jpg",
+--     front =     CUSTOM_ASSETS.."cards/units/stormtrooper-card.jpg",
+--     cost = 15,
+--     aliases = {''},
+--     health = 4,
+--     move = 3,
+-- })
 
 SEPARATIST_UNIT = {
     back =      CUSTOM_ASSETS.."units/cis/card_back.jpg",
@@ -2332,15 +2432,20 @@ SEPARATIST_UNIT = {
 vulture = {
     diffuse =   CUSTOM_ASSETS.."squadrons/separatist/vulture/base_diffuse.jpg",
     mesh =      CUSTOM_ASSETS.."squadrons/separatist/vulture/ai_sw_model.obj",
+    diffuse =   CUSTOM_ASSETS.."squadrons/separatist/vulture/base_diffuse.jpg",
+    mesh =      CUSTOM_ASSETS.."squadrons/separatist/vulture/ai_sw_model.obj",
     health = 3,
     move = 4,
     defense_tokens = {}}
 Squadron:new(vulture, SEPARATIST_UNIT, {
+Squadron:new(vulture, SEPARATIST_UNIT, {
 	name = "Vulture-class Droid Fighter Squadron",
+    front =     CUSTOM_ASSETS.."squadrons/separatist/vulture/base_card.jpg",
     front =     CUSTOM_ASSETS.."squadrons/separatist/vulture/base_card.jpg",
     cost = 8,
     aliases = {'Vulture-class Droid Fighter Squadrons', 'Vulture Droid Fighter Squadron', 'Vulture Droid Fighter Squadrons', "Vultere Droid Fighter", "Vulture", 'Vulture Droid Squadron'}
 })
+
 
 Commander = {
     type="Commander",
@@ -2835,6 +2940,7 @@ Card:new(WeaponsTeam,{name="Ruthless Strategists", front="https://i.imgur.com/2m
 Card:new(WeaponsTeam,{name="Sensor Team", front="https://i.imgur.com/pnn0pOz.jpg", cost=5})
 Card:new(WeaponsTeam,{name="Veteran Gunners", front="https://i.imgur.com/mYGP8R6.jpg", cost=5})
 Card:new(WeaponsTeam,{name="Weapons Battery Techs", front="https://i.imgur.com/wQ6S57i.jpg", cost=5})
+
 
 
 Objective = {
