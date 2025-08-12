@@ -236,12 +236,12 @@
 				"move": 4,
                 "defense": 4,
                 "keywords": [
-                    "Arsenal X",
+                    "Arsenal 2",
                     "Heavy Armor",
                     "Plodding",
                     "Towering",
-                    "Transport X",
-                    "Impact X"
+                    "Transport 3",
+                    "Impact 2"
                 ],
                 "models": 1,
                 "unittype": ["Walker Vehicle"]
@@ -272,7 +272,32 @@
                 ],
                 "models": 2,
                 "unittype": ["Walker Vehicle"]
-            }
+            },
+            {
+                "name": "AT-AT",
+                "factions": [
+					{
+						"name": "Empire",
+						"rank": "Heavy"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/Rebel Troopers.jpg",
+				"upgradeTypes": [
+					"Personnel",
+                    "Weapon",
+                    "Training"
+				],
+				"points": 45,
+				"health": 1,
+				"courage": 1,
+				"move": 4,
+                "defense": 5,
+                "keywords": [
+                    "Nimble"
+                ],
+                "models": 4,
+                "unittype": ["Trooper"]
+            },
         ],
 		"keywords": [
 			{
@@ -296,8 +321,20 @@
                 "definition": "A unit with the Arsenal X keyword can contribute X weapons to Attack Pools during the Form Attack Pool step. Each weapon or combination of weapons may form a new Attack Pool, but each weapon may only be added to 1 Attack Pool."
             },
             {
-				"name": "Plodding",
+				"name": "Towering",
 				"definition": "Can see over one unit or terrain."
+			},
+            {
+				"name": "Plodding",
+				"definition": "Can only move once per activation."
+			},
+            {
+				"name": "Heavy Armor",
+				"definition": "Cancel all non-critical hit results."
+			},
+            {
+				"name": "Nimble",
+				"definition": "When you use a Dodge token, gain 1 Dodge token."
 			}
 		]
 	}
