@@ -45,7 +45,7 @@
             "abbreviation": "D"
         },
         {
-            "name": "Models",
+            "name": "Elements",
             "propertyName": "models",
             "abbreviation": "Models"
         }
@@ -274,11 +274,11 @@
                 "unittype": ["Walker Vehicle"]
             },
             {
-                "name": "AT-AT",
+                "name": "Rebel Troopers",
                 "factions": [
 					{
-						"name": "Empire",
-						"rank": "Heavy"
+						"name": "Rebels",
+						"rank": "Corps"
 					}
 				],
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/Rebel Troopers.jpg",
@@ -297,7 +297,7 @@
                 ],
                 "models": 4,
                 "unittype": ["Trooper"]
-            },
+            }
         ],
 		"keywords": [
 			{
