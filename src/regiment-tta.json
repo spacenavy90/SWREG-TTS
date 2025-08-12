@@ -1,0 +1,304 @@
+{
+	"config": {
+		"trackHighestDivision": true
+	},
+	"appVersion": 2,
+	"credit": [],
+	"game": "Star Wars: Regiment",
+	"preserveLineBreaks": true,
+	"disallowMultipleFactions": true,
+	"singleFaction": true,
+	"stats": [
+		{
+			"name": "Health",
+			"abbreviation": "H"
+        },
+        {
+            "name": "Courage",
+            "abbreviation": "C"
+        },
+        {
+            "name": "Move",
+            "abbreviation": "M"
+        },
+        {
+            "name": "Range",
+            "propertyName": "range",
+            "abbreviation": "R",
+            "string": true
+        },
+        {
+            "name": "White",
+            "propertyName": "white",
+            "abbreviation": "W",
+            "string": true
+        },
+        {
+            "name": "Black",
+            "propertyName": "black",
+            "abbreviation": "B",
+            "string": true
+        },
+        {
+            "name": "Defense",
+            "propertyName": "defense",
+            "abbreviation": "D"
+        },
+        {
+            "name": "Models",
+            "propertyName": "models",
+            "abbreviation": "Models"
+        }
+	],
+	"dataTableKeys": [
+		"units"
+	],
+	"limits": [],
+	"counts": [],
+	"calculations": [],
+	"additionalPrint": [
+		{
+			"propertyName": "Skills",
+			"label": "Skills"
+		},
+		{
+			"propertyName": "BasicEquipment",
+			"label": "Basic Equipment",
+			"dataSource": "keywords"
+		}
+	],
+	"elements": [
+		{
+			"propertyName": "factions",
+			"label": "Faction",
+			"type": "faction",
+			"dataSource": "factions",
+			"divisionProperty": "alignment",
+			"divisions": [
+				"Light",
+                "Dark"
+			],
+			"children": [
+				{
+					"propertyName": "units",
+					"dataSource": "units",
+					"label": "Unit",
+					"type": "main",
+					"tierProperty": "rank",
+					"tierData": "ranks",
+                    "tiers":  [
+                        {
+                            "name": "Commander",
+                            "rank": 1
+                        },
+                        {
+                            "name": "Heavy",
+                            "rank": 2
+                        },
+                        {
+                            "name": "Light",
+                            "rank": 3
+                        },
+                        {
+                            "name": "Support",
+                            "rank": 4
+                        },
+                        {
+                            "name": "Corps",
+                            "rank": 5
+                        },
+                        {
+                            "name": "Special Forces",
+                            "rank": 6
+                        }
+                    ],
+					"children": [
+						{
+							"propertyName": "keywords",
+							"label": "Keywords",
+							"type": "static",
+							"dataSource": "keywords"
+						},
+						{
+							"propertyName": "upgrades",
+							"label": "Upgrades",
+							"type": "upgrade",
+							"dataSource": "upgrades",
+                            "iconScheme": "light",
+                            "icons": {
+                                "Hardpoint": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Hardpoint.png",
+                                "Command": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Command.png",
+                                "Pilot": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Pilot.png",
+                                "Modification": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Modification.png",
+                                "Training": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Training.png",
+                                "Title": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Title.png",
+                                "Weapon": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Weapon.png",
+                                "Personnel": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Personnel.png",
+                                "Grenade": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Grenade.png",
+                                "Gear": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Gear.png",
+                                "Ordnance": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Ordnance.png"
+                            },
+                            "children": [                                
+                                {
+                                    "propertyName": "keywords",
+                                    "label": "Keywords",
+                                    "type": "static",
+                                    "dataSource": "keywords"
+                                }
+                            ]
+						},
+                        {
+                            "propertyName": "unittype",
+                            "label": "Unit Type",
+                            "type": "static"
+                        }
+					]
+				}
+			]
+		}
+	],
+	"data": {
+		"ranks": [
+			{
+                "name": "Commander",
+                "rank": 1
+            },
+            {
+                "name": "Heavy",
+                "rank": 2
+            },
+            {
+                "name": "Light",
+                "rank": 3
+            },
+            {
+                "name": "Support",
+                "rank": 4
+            },
+            {
+                "name": "Corps",
+                "rank": 5
+            },
+            {
+                "name": "Special Forces",
+                "rank": 6
+            }
+		],
+		"upgrades": [
+			{
+				"name": "FF-4 Medium Repeaters",
+				"points": 15,
+                "factions": [],
+                "availableIn": ["AT-AT"],
+				"type": "Hardpoint",
+                "keywords": ["Impact 2"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/FF-4%20Medium%20Repeaters.jpg"
+			}
+		],
+		"factions": [
+			{
+				"name": "Rebels",
+				"alignment": "Light"
+			},
+            {
+                "name": "Empire",
+                "alignment": "Dark"
+            },
+            {
+				"name": "Republic",
+				"alignment": "Light"
+			},
+            {
+                "name": "Separatist",
+                "alignment": "Dark"
+            }
+		],
+		"units": [
+            {
+                "name": "AT-AT",
+                "factions": [
+					{
+						"name": "Empire",
+						"rank": "Heavy"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/AT-AT.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Hardpoint",
+                    "Modification",
+                    "Training",
+                    "Title"
+				],
+				"points": 225,
+				"health": 12,
+				"courage": 8,
+				"move": 4,
+                "defense": 4,
+                "keywords": [
+                    "Arsenal X",
+                    "Heavy Armor",
+                    "Plodding",
+                    "Towering",
+                    "Transport X",
+                    "Impact X"
+                ],
+                "models": 1,
+                "unittype": ["Walker Vehicle"]
+            },
+            {
+                "name": "AT-ST Walkers",
+                "factions": [
+					{
+						"name": "Empire",
+						"rank": "Light"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/AT-ST.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Hardpoint",
+                    "Training"
+				],
+				"points": 125,
+				"health": 4,
+				"courage": 0,
+				"move": 5,
+                "defense": 5,
+                "keywords": [
+                    "Armor 2",
+                    "Arsenal 2",
+                    "Impact 2"
+                ],
+                "models": 2,
+                "unittype": ["Walker Vehicle"]
+            }
+        ],
+		"keywords": [
+			{
+				"name": "Test",
+				"definition": "Test"
+			},
+            {
+                "name": "Impact 2",
+                "definition": "Impact 2 definition"
+            },
+            {
+                "name": "Impact 3",
+                "definition": "Impact 3 definition"
+            },
+            {
+                "name": "Armor 2",
+                "definition": "During the Modify Attack Dice step of the attack sequence, if the defending unit has the Armor X keyword, the defending player may cancel up to X hit results, removing those dice from the Attack Pool."
+            },
+            {
+                "name": "Arsenal 2",
+                "definition": "A unit with the Arsenal X keyword can contribute X weapons to Attack Pools during the Form Attack Pool step. Each weapon or combination of weapons may form a new Attack Pool, but each weapon may only be added to 1 Attack Pool."
+            },
+            {
+				"name": "Plodding",
+				"definition": "Can see over one unit or terrain."
+			}
+		]
+	}
+}
