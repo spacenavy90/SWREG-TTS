@@ -1,0 +1,10 @@
+can use base table texture as long as the texture is similar or identical
+perhaps allow the texture to be changed easily with states
+
+modular design
+four corners; 5 variants:
+0 corners elevated = flat table or slightly raised
+1 corner elevated
+2 corners
+3 corners
+4 corners elevated = flat but taller
