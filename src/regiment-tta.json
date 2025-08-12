@@ -126,17 +126,17 @@
 							"dataSource": "upgrades",
                             "iconScheme": "light",
                             "icons": {
-                                "Hardpoint": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Hardpoint.png",
-                                "Command": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Command.png",
-                                "Pilot": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Pilot.png",
-                                "Modification": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Modification.png",
-                                "Training": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Training.png",
-                                "Title": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Title.png",
-                                "Weapon": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Weapon.png",
-                                "Personnel": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Personnel.png",
-                                "Grenade": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Grenade.png",
-                                "Gear": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Gear.png",
-                                "Ordnance": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Ordnance.png"
+                                "Hardpoint": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/hardpoint.png",
+                                "Command": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/command.png",
+                                "Pilot": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/pilot.png",
+                                "Modification": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/modification.png",
+                                "Training": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/training.png",
+                                "Title": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/title.png",
+                                "Weapon": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/weapon.png",
+                                "Personnel": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/personnel.png",
+                                "Grenade": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/grenade.png",
+                                "Gear": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/gear.png",
+                                "Ordnance": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/ordnance.png"
                             },
                             "children": [                                
                                 {
@@ -297,6 +297,29 @@
                 ],
                 "models": 4,
                 "unittype": ["Trooper"]
+            },
+            {
+                "name": "1.4 FD P-Towers",
+                "factions": [
+					{
+						"name": "Rebels",
+						"rank": "Support"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/1.4FD P-Towers.jpg",
+				"upgradeTypes": [
+					"Title"
+				],
+				"points": 90,
+				"health": 3,
+				"courage": 2,
+				"move": 0,
+                "defense": 5,
+                "keywords": [
+                    "Stationary"
+                ],
+                "models": 2,
+                "unittype": ["Emplacement"]
             }
         ],
 		"keywords": [
@@ -335,6 +358,14 @@
             {
 				"name": "Nimble",
 				"definition": "When you use a Dodge token, gain 1 Dodge token."
+			},
+            {
+				"name": "Transport 3",
+				"definition": "You can carry up to 3 units."
+			},
+            {
+				"name": "Stationary",
+				"definition": "You can't move."
 			}
 		]
 	}
