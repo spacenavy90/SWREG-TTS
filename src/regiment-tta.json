@@ -47,7 +47,7 @@
         {
             "name": "Elements",
             "propertyName": "models",
-            "abbreviation": "Models"
+            "abbreviation": "Elements"
         }
 	],
 	"dataTableKeys": [
@@ -126,17 +126,17 @@
 							"dataSource": "upgrades",
                             "iconScheme": "light",
                             "icons": {
-                                "Hardpoint": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/hardpoint.png",
-                                "Command": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/command.png",
-                                "Pilot": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/pilot.png",
-                                "Modification": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/modification.png",
-                                "Training": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/training.png",
-                                "Title": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/title.png",
-                                "Weapon": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/weapon.png",
-                                "Personnel": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/personnel.png",
-                                "Grenade": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/grenade.png",
-                                "Gear": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/gear.png",
-                                "Ordnance": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/ordnance.png"
+                                "Hardpoint": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Hardpoint.png",
+                                "Command": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Command.png",
+                                "Pilot": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Pilot.png",
+                                "Modification": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Modification.png",
+                                "Training": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Training.png",
+                                "Title": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Title.png",
+                                "Weapon": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Weapon.png",
+                                "Personnel": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Personnel.png",
+                                "Grenade": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Grenade.png",
+                                "Gear": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Gear.png",
+                                "Ordnance": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Ordnance.png"
                             },
                             "children": [                                
                                 {
@@ -215,6 +215,130 @@
 		],
 		"units": [
             {
+                "name": "Test Unit",
+                "factions": [
+					{
+						"name": "Empire",
+						"rank": ""
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/.jpg",
+				"upgradeTypes": [
+					""
+				],
+				"points": 999,
+				"health": 0,
+				"courage": 0,
+				"move": 0,
+                "defense": 0,
+                "keywords": [
+                    ""
+                ],
+                "models": 1,
+                "unittype": ["Trooper"]
+            },
+            {
+                "name": "Darth Vader",
+                "factions": [
+					{
+						"name": "Empire",
+						"rank": "Commander"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/Darth Vader.jpg",
+				"upgradeTypes": [
+					"Command",
+                    "Personnel"
+				],
+				"points": 150,
+				"health": 8,
+				"courage": 0,
+				"move": 4,
+                "defense": 4,
+                "keywords": [
+                    "Compel",
+                    "Deflect",
+                    "Immune: Effect"
+                ],
+                "models": 1,
+                "unittype": ["Trooper"]
+            },
+            {
+                "name": "Imperial Officer",
+                "factions": [
+					{
+						"name": "Empire",
+						"rank": "Commander"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/Imperial Officer.jpg",
+				"upgradeTypes": [
+					"Command"
+				],
+				"points": 50,
+				"health": 4,
+				"courage": 2,
+				"move": 4,
+                "defense": 5,
+                "keywords": [
+                    "Direct X",
+                    "Inspire X",
+                    "Spotter X"
+                ],
+                "models": 1,
+                "unittype": ["Trooper"]
+            },
+            {
+                "name": "Imperial Army Troopers",
+                "factions": [
+					{
+						"name": "Empire",
+						"rank": "Corps"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/Imperial Army Troopers.jpg",
+				"upgradeTypes": [
+					"Personnel",
+                    "Weapon",
+                    "Training"
+				],
+				"points": 45,
+				"health": 1,
+				"courage": 1,
+				"move": 4,
+                "defense": 5,
+                "keywords": [
+                    "Disciplined X"
+                ],
+                "models": 5,
+                "unittype": ["Trooper"]
+            },
+            {
+                "name": "Stormtroopers",
+                "factions": [
+					{
+						"name": "Empire",
+						"rank": "Corps"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/Stormtroopers.jpg",
+				"upgradeTypes": [
+					"Personnel",
+                    "Weapon",
+                    "Training"
+				],
+				"points": 50,
+				"health": 1,
+				"courage": 1,
+				"move": 4,
+                "defense": 0,
+                "keywords": [
+                    ""
+                ],
+                "models": 1,
+                "unittype": ["Trooper"]
+            },
+            {
                 "name": "AT-AT",
                 "factions": [
 					{
@@ -236,12 +360,12 @@
 				"move": 4,
                 "defense": 4,
                 "keywords": [
-                    "Arsenal 2",
+                    "Arsenal X",
                     "Heavy Armor",
                     "Plodding",
                     "Towering",
-                    "Transport 3",
-                    "Impact 2"
+                    "Transport X",
+                    "Impact X"
                 ],
                 "models": 1,
                 "unittype": ["Walker Vehicle"]
@@ -266,9 +390,9 @@
 				"move": 5,
                 "defense": 5,
                 "keywords": [
-                    "Armor 2",
-                    "Arsenal 2",
-                    "Impact 2"
+                    "Armor X",
+                    "Arsenal X",
+                    "Impact X"
                 ],
                 "models": 2,
                 "unittype": ["Walker Vehicle"]
@@ -324,48 +448,72 @@
         ],
 		"keywords": [
 			{
-				"name": "Test",
-				"definition": "Test"
+				"name": "TestKeyword",
+				"definition": "TestKeyword definition"
 			},
             {
-                "name": "Impact 2",
-                "definition": "Impact 2 definition"
+                "name": "Impact X",
+                "definition": "During the Modify Attack Dice step, if the defending unit has the Heavy Armor or Armor X keyword, a unit whose attack pool includes a weapon that has the Impact X keyword can modify up to X hit results to critical hit results for that attack"
             },
             {
-                "name": "Impact 3",
-                "definition": "Impact 3 definition"
+                "name": "Armor X",
+                "definition": "During the Modify Attack Dice step of the attack sequence, if the defending unit has the Armor X keyword, the defending player may cancel up to X non-critical hit results, removing those dice from the Attack Pool."
             },
             {
-                "name": "Armor 2",
-                "definition": "During the Modify Attack Dice step of the attack sequence, if the defending unit has the Armor X keyword, the defending player may cancel up to X hit results, removing those dice from the Attack Pool."
-            },
-            {
-                "name": "Arsenal 2",
-                "definition": "A unit with the Arsenal X keyword can contribute X weapons to Attack Pools during the Form Attack Pool step. Each weapon or combination of weapons may form a new Attack Pool, but each weapon may only be added to 1 Attack Pool."
+                "name": "Arsenal X",
+                "definition": "When choosing weapons during the Form Attack Pool step, each element in the unit that has the Arsenal X keyword can contribute X weapons to attack pools. Each weapon or combination of weapons may form a new attack pool, but each weapon may only be added to 1 attack pool. Weapons with the same name do not have to be in the same attack pool."
             },
             {
 				"name": "Towering",
-				"definition": "Can see over one unit or terrain."
+				"definition": "When drawing line of sight for an attack to or from a unit with this keyword, the attacker may ignore one other unit or non-Elevated terrain within range 1 of the attacker when determining if a base is obscured."
 			},
             {
 				"name": "Plodding",
-				"definition": "Can only move once per activation."
+				"definition": "A unit with the Plodding keyword can only make 1 Move action during its Activation."
 			},
             {
 				"name": "Heavy Armor",
-				"definition": "Cancel all non-critical hit results."
+				"definition": "During the Modify Attack Dice step of the attack sequence, if the defending unit has the Heavy Armor keyword, the defending player cancels all non-critical hit results, removing those dice from the Attack Pool ."
 			},
             {
 				"name": "Nimble",
-				"definition": "When you use a Dodge token, gain 1 Dodge token."
+				"definition": "After a unit that has the Nimble keyword defends against an attack, if it spent at least 1 dodge token during any point of the attack sequence, it gains 1 dodge token."
 			},
             {
-				"name": "Transport 3",
-				"definition": "You can carry up to 3 units."
+				"name": "Transport X",
+				"definition": "You may Transport X friendly trooper (non-creature) units. This value applies per element in your unit. Transport 1 units with 2 elements can ferry up to 2 trooper units. You may choose to deploy trooper units inside eligible transports."
 			},
             {
 				"name": "Stationary",
-				"definition": "You can't move."
+				"definition": "A unit with the Stationary keyword cannot make Moves unless the Move is a Pivot. This unit is allowed to make 2 actions instead of 1 during the activation phase. Units with the Stationary keyword may be deployed within 3” outside of your deployment zone."
+			},
+            {
+				"name": "Direct X",
+				"definition": "Each Command Phase, during the Issue Orders step, a unit with the Direct keyword may issue an order to X friendly units at range 2 that has the unit name or unit type specified."
+			},
+            {
+				"name": "Inspire X",
+				"definition": "When a unit with the Inspire X keyword ends its Activation, remove up to X total Suppression tokens from other allied units at Range 2."
+			},
+            {
+				"name": "Compel",
+				"definition": "After another allied Trooper unit of the matching Rank or unit type within 2 of an allied unit with the Compel keyword Rallies and is Suppressed but not Panicked, at the start of its Make Actions step, it may gain 1 Suppression token to make a free Move action."
+			},
+            {
+				"name": "Spotter X",
+				"definition": "As an action, a unit with the Spotter X keyword can choose up to X friendly units at range 2. Each chosen unit gains an aim token."
+			},
+            {
+				"name": "Immune: Effect",
+				"definition": "A unit with the Immune: Effect keyword ignores all enemy effects associated with the effect type."
+			},
+            {
+				"name": "Disciplined X",
+				"definition": "After a unit with the Disciplined X keyword is issued an Order, it may remove up to X Suppression tokens."
+			},
+            {
+				"name": "Precise X",
+				"definition": "When an attacking unit that has the Precise X keyword spends an aim token during the Reroll Attack Dice step, it can reroll up to X additional attack dice per aim token spent."
 			}
 		]
 	}
