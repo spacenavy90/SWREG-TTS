@@ -253,7 +253,10 @@
                 "keywords": [
                     "Compel",
                     "Deflect",
-                    "Immune: Effect"
+                    "Immune: Effect",
+                    "Impact X",
+                    "Pierce",
+                    "Suppressive"
                 ],
                 "elements": 1,
                 "unittype": ["Trooper"]
@@ -408,7 +411,10 @@
                 "defense": 5,
                 "keywords": [
                     "Armor X",
-                    "Plodding"
+                    "Plodding",
+                    "Blast",
+                    "Indirect",
+                    "Suppressive"
                 ],
                 "elements": 1,
                 "unlimited": true,
@@ -441,7 +447,8 @@
                     "Plodding",
                     "Towering",
                     "Transport X",
-                    "Impact X"
+                    "Impact X",
+                    "Suppressive"
                 ],
                 "elements": 1,
                 "unlimited": true,
@@ -467,7 +474,8 @@
                 "defense": 5,
                 "keywords": [
                     "Armor X",
-                    "Nimble"
+                    "Nimble",
+                    "Impact X"
                 ],
                 "elements": 1,
                 "unlimited": true,
@@ -491,7 +499,9 @@
 				"move": 4,
                 "defense": 4,
                 "keywords": [
-                    "Inspire X"
+                    "Inspire X",
+                    "Impact X",
+                    "Pierce"
                 ],
                 "elements": 1,
                 "unittype": ["Trooper"]
@@ -592,7 +602,8 @@
 				"move": 0,
                 "defense": 5,
                 "keywords": [
-                    "Stationary"
+                    "Stationary",
+                    "Impact X"
                 ],
                 "elements": 2,
                 "unlimited": true,
@@ -644,7 +655,9 @@
                 "defense": 5,
                 "keywords": [
                     "Armor X",
-                    "Shields X"
+                    "Shields X",
+                    "Impact X",
+                    "Swivel"
                 ],
                 "elements": 3,
                 "unlimited": true,
@@ -672,7 +685,8 @@
                 "keywords": [
                     "Armor X",
                     "Arsenal X",
-                    "Loiter"
+                    "Loiter",
+                    "Impact X"
                 ],
                 "elements": 2,
                 "unlimited": true,
@@ -699,7 +713,8 @@
                 "defense": 5,
                 "keywords": [
                     "Armor X",
-                    "Shields X"
+                    "Shields X",
+                    "Impact X"
                 ],
                 "elements": 1,
                 "unlimited": true,
@@ -727,7 +742,10 @@
                 "keywords": [
                     "Armor X",
                     "Arsenal X",
-                    "Shields X"
+                    "Shields X",
+                    "Impact X",
+                    "Ion X",
+                    "Swivel"
                 ],
                 "elements": 1,
                 "unlimited": true,
@@ -756,7 +774,8 @@
                     "Armor X",
                     "Shields X",
                     "Transport X",
-                    "Loiter"
+                    "Loiter",
+                    "Impact X"
                 ],
                 "elements": 1,
                 "unlimited": true,
@@ -860,6 +879,30 @@
             {
 				"name": "Tow Cable",
 				"definition": "After a Walker unit is wounded by an attack that includes this weapon, it gains a vehicle damage token if it does not already have one. Then, the attacker may pivot the defender up to 90°."
+			},
+            {
+				"name": "Deflect",
+				"definition": "While a unit with the Deflect keyword defends against a Ranged attack, it converts critical fail roll results to critical saves. Additionally, during the Roll Defense Dice step, before converting roll results, the attacker suffers 1 Wound if there is at least 1 critical fail roll result in the defense roll. While defending against an attack made only with weapons that have the High Velocity keyword, the Deflect keyword has no effect."
+			},
+            {
+				"name": "Swivel",
+				"definition": "To add a weapon with the Swivel keyword to an attack pool, the defending unit must have at least one of its element’s bases partially inside any arc of the attacking vehicle, including the front or rear. This keyword represents a fully rotating turret or flexible firing mount, and overrides the standard restriction that vehicle weapons may only target through the front arc. Weapons with Swivel may trace line of sight and fire from either the front or rear arc of the vehicle."
+			},
+            {
+				"name": "Pierce",
+				"definition": "If an attacking unit attacks with a weapon with the Pierce keyword it increases the defending unit’s Defense stat to 6+ for the duration of that attack."
+			},
+            {
+				"name": "Blast",
+				"definition": "During the Apply Cover step, a defending unit cannot use cover to cancel hit results produced by an attack pool that contains dice added by a weapon with the Blast keyword."
+			},
+            {
+				"name": "Suppressive",
+				"definition": "When a unit defends against an Attack Pool that has Suppressive, it gains 1 additional Suppression token during the Assign Suppression Token to Defender step."
+			},
+            {
+				"name": "Indirect",
+				"definition": "Indirect represents the strengths and limitations of long-range battlefield artillery. Weapons with this keyword may fire over terrain and other units, allowing them to strike at targets outside normal lines of sight but at the cost of accuracy unless coordinated with spotters."
 			}
 		]
 	}
