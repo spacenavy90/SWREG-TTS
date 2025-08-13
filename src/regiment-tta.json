@@ -28,15 +28,15 @@
             "string": true
         },
         {
-            "name": "White",
-            "propertyName": "white",
-            "abbreviation": "W",
+            "name": "Dice",
+            "propertyName": "dice",
+            "abbreviation": "Dice",
             "string": true
         },
         {
-            "name": "Black",
-            "propertyName": "black",
-            "abbreviation": "B",
+            "name": "To-Hit",
+            "propertyName": "tohit",
+            "abbreviation": "To-Hit",
             "string": true
         },
         {
@@ -46,7 +46,7 @@
         },
         {
             "name": "Elements",
-            "propertyName": "models",
+            "propertyName": "elements",
             "abbreviation": "Elements"
         }
 	],
@@ -92,11 +92,11 @@
                             "rank": 1
                         },
                         {
-                            "name": "Heavy",
+                            "name": "Corps",
                             "rank": 2
                         },
                         {
-                            "name": "Light",
+                            "name": "Special Forces",
                             "rank": 3
                         },
                         {
@@ -104,11 +104,11 @@
                             "rank": 4
                         },
                         {
-                            "name": "Corps",
+                            "name": "Light",
                             "rank": 5
                         },
                         {
-                            "name": "Special Forces",
+                            "name": "Heavy",
                             "rank": 6
                         }
                     ],
@@ -164,11 +164,11 @@
                 "rank": 1
             },
             {
-                "name": "Heavy",
+                "name": "Corps",
                 "rank": 2
             },
             {
-                "name": "Light",
+                "name": "Special Forces",
                 "rank": 3
             },
             {
@@ -176,11 +176,11 @@
                 "rank": 4
             },
             {
-                "name": "Corps",
+                "name": "Light",
                 "rank": 5
             },
             {
-                "name": "Special Forces",
+                "name": "Heavy",
                 "rank": 6
             }
 		],
@@ -191,8 +191,26 @@
                 "factions": [],
                 "availableIn": ["AT-AT"],
 				"type": "Hardpoint",
-                "keywords": ["Impact 2"],
+                "keywords": ["Impact X"],
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/FF-4%20Medium%20Repeaters.jpg"
+			},
+            {
+				"name": "Mo/Dk Power Harpoon",
+				"points": 10,
+                "factions": [],
+                "availableIn": ["T-47 Airspeeders"],
+				"type": "Hardpoint",
+                "keywords": ["Impact X","Fixed: Rear","Tow Cable"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Mo-Dk%20Power%20Harpoon.jpg"
+			},
+            {
+				"name": "Proton Bombs",
+				"points": 15,
+                "factions": [],
+                "availableIn": ["BTL-A4 Y-wing", "TIE/sa Bomber", "Hyena Droid Bomber", "BTL-B Y-wing"],
+				"type": "Modification",
+                "keywords": ["Impact X","Ion X"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Proton%20Bombs.jpg"
 			}
 		],
 		"factions": [
@@ -215,29 +233,6 @@
 		],
 		"units": [
             {
-                "name": "Test Unit",
-                "factions": [
-					{
-						"name": "Empire",
-						"rank": ""
-					}
-				],
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/.jpg",
-				"upgradeTypes": [
-					""
-				],
-				"points": 999,
-				"health": 0,
-				"courage": 0,
-				"move": 0,
-                "defense": 0,
-                "keywords": [
-                    ""
-                ],
-                "models": 1,
-                "unittype": ["Trooper"]
-            },
-            {
                 "name": "Darth Vader",
                 "factions": [
 					{
@@ -245,7 +240,7 @@
 						"rank": "Commander"
 					}
 				],
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/Darth Vader.jpg",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/Darth%20Vader.jpg",
 				"upgradeTypes": [
 					"Command",
                     "Personnel"
@@ -260,7 +255,7 @@
                     "Deflect",
                     "Immune: Effect"
                 ],
-                "models": 1,
+                "elements": 1,
                 "unittype": ["Trooper"]
             },
             {
@@ -271,7 +266,7 @@
 						"rank": "Commander"
 					}
 				],
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/Imperial Officer.jpg",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/Imperial%20Officer.jpg",
 				"upgradeTypes": [
 					"Command"
 				],
@@ -285,7 +280,8 @@
                     "Inspire X",
                     "Spotter X"
                 ],
-                "models": 1,
+                "elements": 1,
+                "unlimited": true,
                 "unittype": ["Trooper"]
             },
             {
@@ -296,7 +292,7 @@
 						"rank": "Corps"
 					}
 				],
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/Imperial Army Troopers.jpg",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/Imperial%20Army%20Troopers.jpg",
 				"upgradeTypes": [
 					"Personnel",
                     "Weapon",
@@ -310,7 +306,8 @@
                 "keywords": [
                     "Disciplined X"
                 ],
-                "models": 5,
+                "elements": 5,
+                "unlimited": true,
                 "unittype": ["Trooper"]
             },
             {
@@ -333,10 +330,89 @@
 				"move": 4,
                 "defense": 0,
                 "keywords": [
-                    ""
+                    "Precise X"
                 ],
-                "models": 1,
+                "elements": 1,
+                "unlimited": true,
                 "unittype": ["Trooper"]
+            },
+            {
+                "name": "Imperial Troop Transports",
+                "factions": [
+					{
+						"name": "Empire",
+						"rank": "Light"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/Imperial%20Troop%20Transports.jpg",
+				"upgradeTypes": [
+					"Pilot"
+				],
+				"points": 50,
+				"health": 3,
+				"courage": 0,
+				"move": 7,
+                "defense": 5,
+                "keywords": [
+                    "Armor X",
+                    "Transport X"
+                ],
+                "elements": 2,
+                "unlimited": true,
+                "unittype": ["Repulsor Vehicle"]
+            },
+            {
+                "name": "AT-ST Walkers",
+                "factions": [
+					{
+						"name": "Empire",
+						"rank": "Light"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/AT-ST.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Hardpoint",
+                    "Training"
+				],
+				"points": 125,
+				"health": 4,
+				"courage": 0,
+				"move": 5,
+                "defense": 5,
+                "keywords": [
+                    "Armor X",
+                    "Arsenal X",
+                    "Impact X"
+                ],
+                "elements": 2,
+                "unlimited": true,
+                "unittype": ["Walker Vehicle"]
+            },
+            {
+                "name": "SPMA-T",
+                "factions": [
+					{
+						"name": "Empire",
+						"rank": "Support"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/SPMA-T.jpg",
+				"upgradeTypes": [
+					""
+				],
+				"points": 125,
+				"health": 6,
+				"courage": 4,
+				"move": 4,
+                "defense": 5,
+                "keywords": [
+                    "Armor X",
+                    "Plodding"
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Walker Vehicle"]
             },
             {
                 "name": "AT-AT",
@@ -367,35 +443,84 @@
                     "Transport X",
                     "Impact X"
                 ],
-                "models": 1,
+                "elements": 1,
+                "unlimited": true,
                 "unittype": ["Walker Vehicle"]
             },
             {
-                "name": "AT-ST Walkers",
+                "name": "TIE/ln Fighter",
                 "factions": [
 					{
 						"name": "Empire",
-						"rank": "Light"
+						"rank": "Heavy"
 					}
 				],
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/AT-ST.jpg",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/TIE-ln%20Fighter.jpg",
 				"upgradeTypes": [
 					"Pilot",
-                    "Hardpoint",
                     "Training"
 				],
-				"points": 125,
+				"points": 100,
 				"health": 4,
-				"courage": 0,
-				"move": 5,
+				"courage": 2,
+				"move": 14,
                 "defense": 5,
                 "keywords": [
                     "Armor X",
-                    "Arsenal X",
-                    "Impact X"
+                    "Nimble"
                 ],
-                "models": 2,
-                "unittype": ["Walker Vehicle"]
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Aerial Vehicle"]
+            },
+            {
+                "name": "Luke Skywalker",
+                "factions": [
+					{
+						"name": "Rebels",
+						"rank": "Commander"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/Luke%20Skywalker.jpg",
+				"upgradeTypes": [
+					"Command"
+				],
+				"points": 110,
+				"health": 6,
+				"courage": 3,
+				"move": 4,
+                "defense": 4,
+                "keywords": [
+                    "Inspire X"
+                ],
+                "elements": 1,
+                "unittype": ["Trooper"]
+            },
+            {
+                "name": "Rebel Officer",
+                "factions": [
+					{
+						"name": "Rebels",
+						"rank": "Commander"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/Rebel%20Officer.jpg",
+				"upgradeTypes": [
+					"Command"
+				],
+				"points": 50,
+				"health": 4,
+				"courage": 2,
+				"move": 4,
+                "defense": 5,
+                "keywords": [
+                    "Direct X",
+                    "Inspire X",
+                    "Spotter X"
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Trooper"]
             },
             {
                 "name": "Rebel Troopers",
@@ -405,7 +530,7 @@
 						"rank": "Corps"
 					}
 				],
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/Rebel Troopers.jpg",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/Rebel%20Troopers.jpg",
 				"upgradeTypes": [
 					"Personnel",
                     "Weapon",
@@ -419,7 +544,34 @@
                 "keywords": [
                     "Nimble"
                 ],
-                "models": 4,
+                "elements": 5,
+                "unlimited": true,
+                "unittype": ["Trooper"]
+            },
+            {
+                "name": "Rebel Commandos",
+                "factions": [
+					{
+						"name": "Rebels",
+						"rank": "Special Forces"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/Rebel%20Commandos.jpg",
+				"upgradeTypes": [
+                    "Weapon",
+                    "Gear"
+				],
+				"points": 60,
+				"health": 1,
+				"courage": 2,
+				"move": 4,
+                "defense": 4,
+                "keywords": [
+                    "Low Profile",
+                    "Scout"
+                ],
+                "elements": 4,
+                "unlimited": true,
                 "unittype": ["Trooper"]
             },
             {
@@ -430,7 +582,7 @@
 						"rank": "Support"
 					}
 				],
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/1.4FD P-Towers.jpg",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/1.4FD%20P-Towers.jpg",
 				"upgradeTypes": [
 					"Title"
 				],
@@ -442,9 +594,175 @@
                 "keywords": [
                     "Stationary"
                 ],
-                "models": 2,
+                "elements": 2,
+                "unlimited": true,
                 "unittype": ["Emplacement"]
+            },
+            {
+                "name": "A-A5 Speeder Trucks",
+                "factions": [
+					{
+						"name": "Rebels",
+						"rank": "Light"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/A-A5%20Speeder%20Trucks.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Hardpoint",
+                    "Modification"
+				],
+				"points": 50,
+				"health": 3,
+				"courage": 0,
+				"move": 7,
+                "defense": 5,
+                "keywords": [
+                    "Armor X",
+                    "Transport X"
+                ],
+                "elements": 2,
+                "unlimited": true,
+                "unittype": ["Repulsor Vehicle"]
+            },
+            {
+                "name": "T-1B Hovertanks",
+                "factions": [
+					{
+						"name": "Rebels",
+						"rank": "Light"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/T1-B%20Hovertanks.jpg",
+				"upgradeTypes": [
+					"Hardpoint"
+				],
+				"points": 90,
+				"health": 3,
+				"courage": 0,
+				"move": 6,
+                "defense": 5,
+                "keywords": [
+                    "Armor X",
+                    "Shields X"
+                ],
+                "elements": 3,
+                "unlimited": true,
+                "unittype": ["Repulsor Vehicle"]
+            },
+            {
+                "name": "T-47 Airspeeders",
+                "factions": [
+					{
+						"name": "Rebels",
+						"rank": "Light"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/T-47%20Airspeeders.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Hardpoint",
+                    "Training"
+				],
+				"points": 100,
+				"health": 3,
+				"courage": 0,
+				"move": 10,
+                "defense": 5,
+                "keywords": [
+                    "Armor X",
+                    "Arsenal X",
+                    "Loiter"
+                ],
+                "elements": 2,
+                "unlimited": true,
+                "unittype": ["Aerial Vehicle"]
+            },
+            {
+                "name": "T-65 X-wing",
+                "factions": [
+					{
+						"name": "Rebels",
+						"rank": "Heavy"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/T-65%20X-wing.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Ordnance",
+                    "Title"
+				],
+				"points": 125,
+				"health": 5,
+				"courage": 3,
+				"move": 12,
+                "defense": 5,
+                "keywords": [
+                    "Armor X",
+                    "Shields X"
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Aerial Vehicle"]
+            },
+            {
+                "name": "BTL-A4 Y-wing",
+                "factions": [
+					{
+						"name": "Rebels",
+						"rank": "Heavy"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/BTL%20Y-wing.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Ordnance",
+                    "Modification"
+				],
+				"points": 125,
+				"health": 6,
+				"courage": 3,
+				"move": 10,
+                "defense": 5,
+                "keywords": [
+                    "Armor X",
+                    "Arsenal X",
+                    "Shields X"
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Aerial Vehicle"]
+            },
+            {
+                "name": "UT-60D U-wing",
+                "factions": [
+					{
+						"name": "Rebels",
+						"rank": "Heavy"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/UT-60D%20U-wing.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Hardpoint",
+                    "Title"
+				],
+				"points": 125,
+				"health": 5,
+				"courage": 3,
+				"move": 10,
+                "defense": 5,
+                "keywords": [
+                    "Armor X",
+                    "Shields X",
+                    "Transport X",
+                    "Loiter"
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Aerial Vehicle"]
             }
+            
         ],
 		"keywords": [
 			{
@@ -514,6 +832,34 @@
             {
 				"name": "Precise X",
 				"definition": "When an attacking unit that has the Precise X keyword spends an aim token during the Reroll Attack Dice step, it can reroll up to X additional attack dice per aim token spent."
+			},
+            {
+				"name": "Loiter",
+				"definition": "Aerial vehicles with the Loiter keyword are not required to make compulsory moves nor are they removed from the battlefield at the end phase."
+			},
+            {
+				"name": "Low Profile",
+				"definition": "When a unit with the Low Profile keyword would roll 1 or more defense dice during the Roll Cover Pool step, it rolls 1 fewer defense die and instead adds an additional critical save result to the Cover Pool after rolling, giving it one free successful cover roll."
+			},
+            {
+				"name": "Scout",
+				"definition": "After an undeployed unit with the Scout keyword deploys, it may perform a free move action, ignoring difficult terrain."
+			},
+            {
+				"name": "Shields X",
+				"definition": "During the Modify Defense Dice step of the attack sequence, if the defending unit has the Shields X keyword, the defending player may reroll up to X defense dice. If the attack pool contains a weapon with the Ion keyword, no dice may be rerolled by the Shields X keyword."
+			},
+            {
+				"name": "Fixed: Rear",
+				"definition": "To add a weapon that has the Fixed: Front or Fixed: Rear keyword to an attack pool, the defending unit must have at least one of its miniature’s bases partially inside the specified firing arc of the attacking miniature. Vehicles are assumed to have Fixed: Front on all their weapons unless stated otherwise."
+			},
+            {
+				"name": "Ion X",
+				"definition": "A vehicle or droid trooper unit that suffers wounds after defending against an attack that included a weapon with the Ion X keyword gains X ion tokens. At the start of a unit’s activation, roll one defense die for every ion token that unit has. On a roll result of 1-4, that unit performs one fewer action during its activation. At the end of a unit’s activation, it removes any ion tokens that it has. Units with the Shields X keyword may not re-roll defense dice using its effect."
+			},
+            {
+				"name": "Tow Cable",
+				"definition": "After a Walker unit is wounded by an attack that includes this weapon, it gains a vehicle damage token if it does not already have one. Then, the attacker may pivot the defender up to 90°."
 			}
 		]
 	}
