@@ -1,0 +1,361 @@
+----#include !/DieRoller
+function onLoadShared(_colorSide)
+  self.interactable = true
+  colorSide = _colorSide
+  dieRollerInfo = Global.getTable("dieRollerInfo")
+  dieRollerZone = getObjectFromGUID(dieRollerInfo.dieRollerZone[colorSide])
+  mode = nil
+  selectedMode = "attack"
+  partialRoll = nil
+  isRolling = false
+  createEmptyDieValues()
+end
+
+function createEmptyDieValues()
+  local tooltips = {
+    "Crits",
+    "Hits",
+    "Surges (Attack)",
+    "Blocks",
+    "Surges (Defense)",
+  }
+  local zStart = 1.62
+  for i, tooltip in pairs(tooltips) do
+    self.createButton({
+      click_function = "dud",
+      function_owner = self,
+      label = "",
+      position = {-3.12, 0.52, zStart - ((i - 1) * 0.88)},
+      rotation = {0, -90, 0},
+      scale = {0.5, 0.5, 0.5},
+      width = 400,
+      height = 400,
+      font_size = 450,
+      color = {1, 1, 1, 0.01},
+      font_color = {1, 0, 0, 100},
+      tooltip = tooltip,
+      alignment = 3
+    })
+  end
+end
+
+function dud() end
+
+function rollDie(callbackParams)
+  if isRolling == true then
+    return
+  end
+  isRolling = true
+  partialRoll = nil
+  local color = callbackParams[1]
+  local player = Player[color]
+  local toRoll = dieObjs
+  if player  then
+    local selected = player.getSelectedObjects()
+    if selected and #selected > 0 then
+      toRoll = {}
+      for _, s in pairs(selected) do
+        if s.getValue() then
+          table.insert(toRoll, s)
+        end
+      end
+      partialRoll = toRoll
+    end
+  end
+  if toRoll then
+    local rolled = 0
+    for _, obj in pairs(toRoll) do
+      if obj then
+        simulatedRoll(obj)
+        rolled = rolled + 1
+      end
+    end
+    Wait.time(function()
+      isRolling = false
+      if rolled > 0 then
+        printDieValues()
+      end
+    end, 1.25)
+  end
+end
+
+function simulatedRoll(dice)
+  local sides = dice.getRotationValues()
+  local count = 10
+  local pos = dice.getPosition()
+  dice.setPosition({pos.x, pos.y + 5, pos.z})
+  dice.setRotation(sides[math.random(1, #sides)].rotation, false, true)
+  dice.interactable = false
+  local timer = Wait.time(function()
+    if dice then
+      local side = sides[math.random(1, #sides)]
+      count = count - 1
+      if count <= 1 then
+        dice.setPositionSmooth(pos, false, true)
+        dice.interactable = true
+      else
+        dice.setRotationSmooth(side.rotation, false, true)
+      end
+    end
+  end, 0.10, count)
+end
+
+function printDieValues()
+  if dieObjs == nil then
+    return
+  end
+  local totalCount = 0
+  local dieRecord = {
+    crit   = 0,
+    hit    = 0,
+    oSurge = 0,
+    block  = 0,
+    dSurge = 0,
+  }
+  local dieColors = {
+    red    = 0,
+    black  = 0,
+    white  = 0,
+  }
+  for _, obj in pairs(dieObjs) do
+    if obj then
+      totalCount = totalCount + 1
+      local sDieValue = obj.getValue()
+      local sDieColor = obj.getVar("dieColor")
+      dieColors[sDieColor] = dieColors[sDieColor] + 1
+      local sDieType = obj.getVar("dieType")
+      local sDieResult = dieRollerInfo.dieValues[sDieType][sDieColor][sDieValue]
+      if sDieResult ~= "blank" then
+        dieRecord[sDieResult] = dieRecord[sDieResult] + 1
+      end
+    end
+  end
+  local index = 0
+  for _, d in pairs(dieRecord) do
+    local label = tostring(d)
+    if d == 0 then
+      label = ""
+    end
+    self.editButton({
+      index          = index,
+      label          = label,
+    })
+    index = index + 1
+  end
+  if totalCount == 0 then
+    broadcastToAll(string.upper(colorSide) .. " deleted their dice mid-roll.")
+  else
+    printDieValuesToScreen(dieRecord, dieColors)
+  end
+end
+
+function printDieValuesToScreen(dieRecord, dieColors)
+  local message = string.upper(colorSide) .. " "
+  if partialRoll == nil or #partialRoll == #dieObjs then
+    message = message .. "rolled " .. tostring(#dieObjs)
+  else
+    local reRolled = {red = 0, black = 0, white = 0}
+    for _, die in pairs(partialRoll) do
+      local sDieColor = die.getVar("dieColor")
+      reRolled[sDieColor] = reRolled[sDieColor] + 1
+    end
+    local reRollMessage = ""
+    if reRolled.red > 0 then
+      reRollMessage = reRollMessage .. (tostring(reRolled.red) .. "R ")
+    end
+    if reRolled.black > 0 then
+      reRollMessage = reRollMessage .. (tostring(reRolled.black) .. "B ")
+    end
+    if reRolled.white > 0 then
+      reRollMessage = reRollMessage .. (tostring(reRolled.white) .. "W ")
+    end
+    message = message .. "re-rolled " .. reRollMessage .. "of " .. tostring(#dieObjs)
+  end
+  local colors = ""
+  if dieColors.red > 0 then
+    colors = colors .. tostring(dieColors.red) .. "R "
+  end
+  if dieColors.black > 0 then
+    colors = colors .. tostring(dieColors.black) .. "B "
+  end
+  if dieColors.white > 0 then
+    colors = colors .. tostring(dieColors.white) .. "W "
+  end
+  if mode == "defend" then
+    message = message .. " defense dice " .."( pool: " .. colors .. ")\n"
+    message = message .. tostring(dieRecord.block) .. " BLOCKS, " .. tostring(dieRecord.dSurge) .. " SURGES."
+  else
+    message = message .. " attack dice " .. "( pool: " .. colors .. ")\n"
+    message = message .. tostring(dieRecord.crit) .. " CRITS, " .. tostring(dieRecord.hit) .. " HITS, " .. tostring(dieRecord.oSurge) .. " SURGES."
+  end
+  broadcastToAll(message)
+end
+
+function spawnWhiteAttackDice()
+  mode = "attack"
+  spawnDie("white", "D8")
+end
+
+function spawnBlackAttackDice()
+  mode = "attack"
+  spawnDie("black", "D8")
+end
+
+function spawnRedAttackDice()
+  mode = "attack"
+  spawnDie("red", "D8")
+end
+
+function spawnWhiteDefenseDice()
+  mode = "defend"
+  spawnDie("white", "D6")
+end
+function spawnRedDefenseDice()
+  mode = "defend"
+  spawnDie("red", "D6")
+end
+
+
+function spawnDie(dieColor,dieType)
+  if selectedMode ~= mode then
+    clearDie()
+    selectedMode = mode
+  end
+
+  if dieObjs == nil then
+    dieObjs = {}
+  end
+
+  local dieCount = #dieObjs
+
+  if dieCount < 25 then
+    local rot = self.getRotation()
+    local pos = self.getPosition()
+
+    local c = dieRollerInfo.diePos[dieCount + 1].c
+    local q = dieRollerInfo.diePos[dieCount + 1].q
+
+    local a = c * math.cos(math.rad(q + rot.y))
+    local b = c * math.sin(math.rad(q + rot.y))
+
+    pos.x = pos.x + a
+    pos.z = pos.z - b
+    pos.y = 3
+
+    local dieBag = getObjectFromGUID(Global.getVar(dieColor .. dieType .."BagGUID"))
+
+    local diceRot
+    if mode == "attack" then
+        diceRot = {326.26, 1.20, 89.99}
+    else
+        diceRot = {270.00, 358.92, 0.00}
+    end
+
+    local newDice = dieBag.takeObject({
+      rotation = diceRot
+    })
+    newDice.setPosition(pos)
+    newDice.setLuaScript(
+        "function onDestroy() " ..
+        "  dieRollerInfo = Global.getTable('dieRollerInfo')\n" ..
+        "  dieRoller = getObjectFromGUID(dieRollerInfo."..colorSide.."DieRollerGUID)\n" ..
+        "  dieRoller.call('updateDieCountDisplay', {guid = self.getGUID()})\n" ..
+        "end")
+    newDice.setVar("dieColor", dieColor)
+    newDice.setVar("dieType", mode)
+    table.insert(dieObjs, newDice)
+
+    Wait.frames(updateDieCountDisplay)
+  end
+end
+
+function clearDie()
+  if dieObjs then
+      for i, obj in pairs(dieObjs) do
+          if obj then
+              destroyObject(obj)
+          end
+      end
+      dieObjs = {}
+  end
+
+  local zoneObjs = dieRollerZone.getObjects()
+
+  for _,obj in pairs(zoneObjs) do
+      if obj ~= self then
+          destroyObject(obj)
+      end
+  end
+end
+
+function updateDieCountDisplay(params)
+  local toDelete
+  if params then
+    toDelete = params.guid
+  end
+  dieColorCount = {
+    white = 0,
+    black = 0,
+    red   = 0,
+  }
+
+  if dieObjs then
+    local clone = {unpack(dieObjs)} 
+    dieObjs = {}
+  
+    for _, obj in ipairs(clone) do
+      if obj and obj.getGUID() ~= toDelete then
+        local selectedColor = obj.getVar("dieColor")
+        dieColorCount[selectedColor] = dieColorCount[selectedColor] + 1
+        table.insert(dieObjs, obj)
+      end
+    end
+  end
+
+  if mode == "attack" then
+      clearButtonDisplay(dieRollerInfo.buttonInfo[colorSide.."Player"].whiteDefenseButtonGUID,"white")
+      clearButtonDisplay(dieRollerInfo.buttonInfo[colorSide.."Player"].redDefenseButtonGUID,"red")
+
+      updateButtonDisplay(dieRollerInfo.buttonInfo[colorSide.."Player"].whiteAttackButtonGUID,"white")
+      updateButtonDisplay(dieRollerInfo.buttonInfo[colorSide.."Player"].blackAttackButtonGUID,"black")
+      updateButtonDisplay(dieRollerInfo.buttonInfo[colorSide.."Player"].redAttackButtonGUID,"red")
+  else
+      clearButtonDisplay(dieRollerInfo.buttonInfo[colorSide.."Player"].whiteAttackButtonGUID,"white")
+      clearButtonDisplay(dieRollerInfo.buttonInfo[colorSide.."Player"].blackAttackButtonGUID,"black")
+      clearButtonDisplay(dieRollerInfo.buttonInfo[colorSide.."Player"].redAttackButtonGUID,"red")
+
+      updateButtonDisplay(dieRollerInfo.buttonInfo[colorSide.."Player"].whiteDefenseButtonGUID,"white")
+      updateButtonDisplay(dieRollerInfo.buttonInfo[colorSide.."Player"].redDefenseButtonGUID,"red")
+  end
+
+end
+
+function updateButtonDisplay(buttonGUID,diceColor)
+  buttonObj = getObjectFromGUID(buttonGUID)
+
+  local data = buttonObj.getTable("data")
+  if dieColorCount[diceColor] ~= 0 then
+      data.label = dieColorCount[diceColor]
+  else
+      data.label = ""
+  end
+
+  buttonObj.clearButtons()
+  buttonObj.createButton(data)
+end
+
+function clearButtonDisplay(buttonGUID,diceColor)
+  buttonObj = getObjectFromGUID(buttonGUID)
+
+  local data = buttonObj.getTable("data")
+  data.label = ""
+
+  buttonObj.clearButtons()
+  buttonObj.createButton(data)
+end
+
+----#include !/DieRoller
+
+function onload()
+  onLoadShared("blue")
+end
