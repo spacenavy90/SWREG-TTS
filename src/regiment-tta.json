@@ -203,6 +203,25 @@
             }
 		],
 		"upgrades": [
+            {
+                "name": "Personal Energy Shields",
+                "points": 15,
+                "factions": ["Rebel", "Empire", "Republic", "Separatist"],
+                "keywords": ["Shields 1"],
+                "type": "Gear",
+                "requiresTier": "Corps"
+            },
+            {
+                "name": "Coolant Injectors",
+                "points": 10,
+                "factions": ["Rebel", "Empire", "Republic", "Separatist"],
+                "keywords": [],
+                "type": "Gear",
+                "requiresProperty": {
+                    "property": "unittype",
+                    "value": "Trooper"
+                }
+            },
 			{
 				"name": "FF-4 Medium Repeaters",
 				"points": 15,
