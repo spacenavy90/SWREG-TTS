@@ -153,7 +153,25 @@
                             "type": "static"
                         }
 					]
-				}
+				},
+                {
+					"propertyName": "objectives",
+					"dataSource": "objectives",
+					"label": "Objectives",
+					"type": "main"
+				},
+                {
+                    "propertyName": "conditions",
+                    "dataSource": "conditions",
+                    "label": "Conditions",
+                    "type": "main"
+                },
+                {
+                    "propertyName": "advantages",
+                    "dataSource": "advantages",
+                    "label": "Advantages",
+                    "type": "main"
+                }
 			]
 		}
 	],
@@ -349,9 +367,10 @@
 				],
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/Imperial%20Troop%20Transports.jpg",
 				"upgradeTypes": [
-					"Pilot"
+					"Pilot",
+                    "Hardpoint"
 				],
-				"points": 50,
+				"points": 40,
 				"health": 3,
 				"courage": 0,
 				"move": 7,
@@ -623,7 +642,7 @@
                     "Hardpoint",
                     "Modification"
 				],
-				"points": 50,
+				"points": 40,
 				"health": 3,
 				"courage": 0,
 				"move": 7,
@@ -648,7 +667,7 @@
 				"upgradeTypes": [
 					"Hardpoint"
 				],
-				"points": 90,
+				"points": 100,
 				"health": 3,
 				"courage": 0,
 				"move": 6,
@@ -734,7 +753,7 @@
                     "Ordnance",
                     "Modification"
 				],
-				"points": 125,
+				"points": 150,
 				"health": 6,
 				"courage": 3,
 				"move": 10,
@@ -782,6 +801,228 @@
                 "unittype": ["Aerial Vehicle"]
             }
             
+        ],
+        "objectives": [
+            {
+                "name": "Area Denial",
+                "imageUrls": ["https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/Area%20Denial%20(Map).jpg?raw=true", "https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/Area%20Denial.jpg?raw=true"],
+                "factions": [
+                    {
+                        "name": "Rebels"
+                    },
+                    {
+                        "name": "Empire"
+                    },
+                    {
+                        "name": "Separatist"
+                    },
+                    {
+                        "name": "Republic"
+                    }
+                ]
+            },            
+            {
+                "name": "Find the Artifact",
+                "imageUrls": ["https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/Find%20the%20Artifact%20(Map).jpg?raw=true", "https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/Find%20the%20Artifact.jpg?raw=true"],
+                "factions": [
+                    {
+                        "name": "Rebels"
+                    },
+                    {
+                        "name": "Empire"
+                    },
+                    {
+                        "name": "Separatist"
+                    },
+                    {
+                        "name": "Republic"
+                    }
+                ]
+            },
+            {
+                "name": "Frontlines",
+                "imageUrls": ["https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/Frontlines%20(Map).jpg?raw=true", "https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/Frontlines.jpg?raw=true"],
+                "factions": [
+                    {
+                        "name": "Rebels"
+                    },
+                    {
+                        "name": "Empire"
+                    },
+                    {
+                        "name": "Separatist"
+                    },
+                    {
+                        "name": "Republic"
+                    }
+                ]
+            },
+            {
+                "name": "Kingmaker",
+                "imageUrls": ["https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/Kingmaker%20(Map).jpg?raw=true", "https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/Kingmaker.jpg?raw=true"],
+                "factions": [
+                    {
+                        "name": "Rebels"
+                    },
+                    {
+                        "name": "Empire"
+                    },
+                    {
+                        "name": "Separatist"
+                    },
+                    {
+                        "name": "Republic"
+                    }
+                ]
+            }
+        ],
+        "conditions": [
+            {
+                "name": "Clear Conditions",
+                "imageUrl": "https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/Clear%20Conditions.jpg?raw=true",
+                "factions": [
+                    {
+                        "name": "Rebels"
+                    },
+                    {
+                        "name": "Empire"
+                    },
+                    {
+                        "name": "Separatist"
+                    },
+                    {
+                        "name": "Republic"
+                    }
+                ]
+            },
+            {
+                "name": "Dangerous Florae",
+                "imageUrl": "https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/Dangerous%20Florae.jpg?raw=true",
+                "factions": [
+                    {
+                        "name": "Rebels"
+                    },
+                    {
+                        "name": "Empire"
+                    },
+                    {
+                        "name": "Separatist"
+                    },
+                    {
+                        "name": "Republic"
+                    }
+                ]
+            },
+            {
+                "name": "Hostile Environment",
+                "imageUrl": "https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/Hostile%20Environment.jpg?raw=true",
+                "factions": [
+                    {
+                        "name": "Rebels"
+                    },
+                    {
+                        "name": "Empire"
+                    },
+                    {
+                        "name": "Separatist"
+                    },
+                    {
+                        "name": "Republic"
+                    }
+                ]
+            },
+            {
+                "name": "Limited Visibility",
+                "imageUrl": "https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/Limited%20Visibility.jpg?raw=true",
+                "factions": [
+                    {
+                        "name": "Rebels"
+                    },
+                    {
+                        "name": "Empire"
+                    },
+                    {
+                        "name": "Separatist"
+                    },
+                    {
+                        "name": "Republic"
+                    }
+                ]
+            }
+        ],
+        "advantages": [
+            {
+                "name": "Careful Planning",
+                "imageUrl": "https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/Careful%20Planning.jpg?raw=true",
+                "factions": [
+                    {
+                        "name": "Rebels"
+                    },
+                    {
+                        "name": "Empire"
+                    },
+                    {
+                        "name": "Separatist"
+                    },
+                    {
+                        "name": "Republic"
+                    }
+                ]
+            },
+            {
+                "name": "Cunning Deployment",
+                "imageUrl": "https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/Cunning%20Deployment.jpg?raw=true",
+                "factions": [
+                    {
+                        "name": "Rebels"
+                    },
+                    {
+                        "name": "Empire"
+                    },
+                    {
+                        "name": "Separatist"
+                    },
+                    {
+                        "name": "Republic"
+                    }
+                ]
+            },
+            {
+                "name": "Targeting Network",
+                "imageUrl": "https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/Targeting%20Network.jpg?raw=true",
+                "factions": [
+                    {
+                        "name": "Rebels"
+                    },
+                    {
+                        "name": "Empire"
+                    },
+                    {
+                        "name": "Separatist"
+                    },
+                    {
+                        "name": "Republic"
+                    }
+                ]
+            },
+            {
+                "name": "The Elites",
+                "imageUrl": "https://github.com/spacenavy90/SWREG-TTS/blob/master/cards/battle-deck/The%20Elites.jpg?raw=true",
+                "factions": [
+                    {
+                        "name": "Rebels"
+                    },
+                    {
+                        "name": "Empire"
+                    },
+                    {
+                        "name": "Separatist"
+                    },
+                    {
+                        "name": "Republic"
+                    }
+                ]
+            }
         ],
 		"keywords": [
 			{
