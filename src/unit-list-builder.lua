@@ -857,10 +857,10 @@ function _listRanks()
   _setBackButton("X", "Clear Unit", _addOrCopy)
   for i, rank in ipairs({
     "Commander",
-    "Operative",
+    "Operative", --no longer exists, replaced by Support
     "Corps",
     "Special Forces",
-    "Support",
+    "Support", -- icon is used by Light Vehicle now
     "Heavy",
   }) do
     local callback = "_listUnits_" .. i

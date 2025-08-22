@@ -207,9 +207,11 @@
                 "name": "Personal Energy Shields",
                 "points": 15,
                 "factions": ["Rebel", "Empire", "Republic", "Separatist"],
-                "keywords": ["Shields 1"],
+                "keywords": ["Shields X"],
                 "type": "Gear",
-                "requiresTier": "Corps"
+                "requiresTier": "Corps",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/FF-4%20Medium%20Repeaters.jpg"
+
             },
             {
                 "name": "Coolant Injectors",
@@ -220,7 +222,9 @@
                 "requiresProperty": {
                     "property": "unittype",
                     "value": "Trooper"
-                }
+                },
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/FF-4%20Medium%20Repeaters.jpg"
+
             },
 			{
 				"name": "FF-4 Medium Repeaters",

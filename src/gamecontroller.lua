@@ -766,7 +766,7 @@ end
 
 function homeScreen()
     screen.createButton({click_function = "dud", function_owner = self, label = "", position = {0.9, 0.25, 0}, rotation = {0, -90, 90}, scale = {0.5, 0.5, 0.5}, width = 0, height = 0, font_size = 100, font_color = {0.8867, 0.7804, 0, 1}, alignment = 1})
-    printToScreen("STAR WARS REGIMENT TTS MOD\n by SpaceNavy\n\nSelect an option below to start", 80, 3)
+    printToScreen("STAR WARS REGIMENT TTS MOD\n by SpaceNavy and SWL Devs\n\nSelect an option below to start", 80, 3)
 end
 
 
@@ -775,7 +775,7 @@ end
 function mainMenu()
     timerScreen = false
 
-    printToScreen("STAR WARS REGIMENT TTS MOD\n by SpaceNavy\n\nSelect an option below to start", 80, 3)
+    printToScreen("STAR WARS REGIMENT TTS MOD\n by SpaceNavy and SWL Devs\n\nSelect an option below to start", 80, 3)
 
     clearAllButtons()
     local menuEntries = {}

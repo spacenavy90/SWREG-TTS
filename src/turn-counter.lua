@@ -1,3 +1,4 @@
+-- only 5 rounds per game now instead of 6
 function onload(save_state)
     checkState()
 end

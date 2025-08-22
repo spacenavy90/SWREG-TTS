@@ -18,7 +18,7 @@ function onload(save_state)
 
 
     assetButton.createButton({
-            click_function = "returnTokens", function_owner = self, label = "", position = {0, 0.65, 0}, scale = {1, 1, 0.7}, width = 1500, height = 2000, font_size = 400, color = {0.7573, 0.7573, 0.7573, 0.01}, font_color = {0, 0, 0, 100}, tooltip = "Return all Aim, Dodge, Standby and Command Tokens to the respective Players"
+            click_function = "returnTokens", function_owner = self, label = "", position = {0, 0.65, 0}, scale = {1, 1, 0.7}, width = 1500, height = 2000, font_size = 400, color = {0.7573, 0.7573, 0.7573, 0.01}, font_color = {0, 0, 0, 100}, tooltip = "Return all Aim, Dodge, and Standby Tokens to the respective Players"
     })
     assetButton.setColorTint({0.7,0,0})
 end
@@ -50,16 +50,6 @@ function returnTokens()
                 smokeNumber = returnToken(smokeBag,obj,smokeNumber)
             elseif obj.getName() == "Observation Token" then
                 observationNumber = returnToken(observationBag,obj,observationNumber)
-            elseif obj.getVar("isAToken") == true then
-                local unitData = obj.getTable("unitData")
-                local commandTray = getObjectFromGUID(commandTokenTrayData[unitData.colorSide][unitData.commandType])
-                local pos = commandTray.getPosition()
-                pos.y = pos.y + 0.5 +(0.2 * commandNumber)
-                local rot = commandTray.getRotation()
-
-                obj.setPositionSmooth(pos, false, false)
-                obj.setRotationSmooth(rot, false, false)
-                commandNumber = commandNumber + 1
             end
         end
     end
