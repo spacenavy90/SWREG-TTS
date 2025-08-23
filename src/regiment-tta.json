@@ -11,20 +11,20 @@
 	"stats": [
 		{
 			"name": "Health",
-			"abbreviation": "H"
+			"abbreviation": "HP"
         },
         {
             "name": "Courage",
-            "abbreviation": "C"
+            "abbreviation": "Cour."
         },
         {
             "name": "Move",
-            "abbreviation": "M"
+            "abbreviation": "Mov"
         },
         {
             "name": "Range",
             "propertyName": "range",
-            "abbreviation": "R",
+            "abbreviation": "Ran.",
             "string": true
         },
         {
@@ -36,18 +36,18 @@
         {
             "name": "To-Hit",
             "propertyName": "tohit",
-            "abbreviation": "To-Hit",
+            "abbreviation": "Hit",
             "string": true
         },
         {
             "name": "Defense",
             "propertyName": "defense",
-            "abbreviation": "D"
+            "abbreviation": "Def."
         },
         {
             "name": "Elements",
             "propertyName": "elements",
-            "abbreviation": "Elements"
+            "abbreviation": "Bases"
         }
 	],
 	"dataTableKeys": [
@@ -56,17 +56,7 @@
 	"limits": [],
 	"counts": [],
 	"calculations": [],
-	"additionalPrint": [
-		{
-			"propertyName": "Skills",
-			"label": "Skills"
-		},
-		{
-			"propertyName": "BasicEquipment",
-			"label": "Basic Equipment",
-			"dataSource": "keywords"
-		}
-	],
+	"additionalPrint": [],
 	"elements": [
 		{
 			"propertyName": "factions",
@@ -136,7 +126,8 @@
                                 "Personnel": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Personnel.png",
                                 "Grenade": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Grenade.png",
                                 "Gear": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Gear.png",
-                                "Ordnance": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Ordnance.png"
+                                "Ordnance": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Ordnance.png",
+                                "Force": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/icons/upgrades/Force.png"
                             },
                             "children": [                                
                                 {
@@ -210,8 +201,7 @@
                 "keywords": ["Shields X"],
                 "type": "Gear",
                 "requiresTier": "Corps",
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/FF-4%20Medium%20Repeaters.jpg"
-
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Personal%20Energy%20Shields.jpg"
             },
             {
                 "name": "Coolant Injectors",
@@ -223,8 +213,15 @@
                     "property": "unittype",
                     "value": "Trooper"
                 },
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/FF-4%20Medium%20Repeaters.jpg"
-
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Coolant%20Injectors.jpg"
+            },
+            {
+                "name": "Advanced Body Armor",
+                "points": 10,
+                "factions": ["Rebel", "Empire", "Republic", "Separatist"],
+                "type": "Gear",
+                "requiresTier": "Corps",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Advanced%20Body%20Armor.jpg"
             },
 			{
 				"name": "FF-4 Medium Repeaters",
@@ -249,10 +246,19 @@
 				"points": 15,
                 "factions": [],
                 "availableIn": ["BTL-A4 Y-wing", "TIE/sa Bomber", "Hyena Droid Bomber", "BTL-B Y-wing"],
-				"type": "Modification",
+				"type": "Ordnance",
                 "keywords": ["Impact X","Ion X"],
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Proton%20Bombs.jpg"
-			}
+			},
+            {
+                "name": "Veteran Pilot",
+                "points": 5,
+                "factions": ["Rebel", "Empire", "Republic", "Separatist"],
+                "type": "Pilot",
+                "effect": "Once per game, while you are defending or attacking, you may reroll 1 die.",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Veteran%20Pilot.jpg"
+            }
+            
 		],
 		"factions": [
 			{
@@ -284,7 +290,7 @@
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/Darth%20Vader.jpg",
 				"upgradeTypes": [
 					"Command",
-                    "Personnel"
+                    "Force"
 				],
 				"points": 150,
 				"health": 8,
@@ -312,7 +318,9 @@
 				],
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/Imperial%20Officer.jpg",
 				"upgradeTypes": [
-					"Command"
+					"Command",
+                    "Personnel",
+                    "Training"
 				],
 				"points": 50,
 				"health": 4,
@@ -340,6 +348,8 @@
 				"upgradeTypes": [
 					"Personnel",
                     "Weapon",
+                    "Gear",
+                    "Grenade",
                     "Training"
 				],
 				"points": 45,
@@ -366,7 +376,10 @@
 				"upgradeTypes": [
 					"Personnel",
                     "Weapon",
-                    "Training"
+                    "Gear",
+                    "Grenade",
+                    "Training",
+                    "Title"
 				],
 				"points": 50,
 				"health": 1,
@@ -391,7 +404,8 @@
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/Imperial%20Troop%20Transports.jpg",
 				"upgradeTypes": [
 					"Pilot",
-                    "Hardpoint"
+                    "Hardpoint",
+                    "Modification"
 				],
 				"points": 40,
 				"health": 3,
@@ -418,7 +432,8 @@
 				"upgradeTypes": [
 					"Pilot",
                     "Hardpoint",
-                    "Training"
+                    "Modification",
+                    "Title"
 				],
 				"points": 125,
 				"health": 4,
@@ -444,7 +459,8 @@
 				],
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/SPMA-T.jpg",
 				"upgradeTypes": [
-					""
+					"Pilot",
+                    "Hardpoint"
 				],
 				"points": 125,
 				"health": 6,
@@ -475,7 +491,6 @@
 					"Pilot",
                     "Hardpoint",
                     "Modification",
-                    "Training",
                     "Title"
 				],
 				"points": 225,
@@ -507,7 +522,8 @@
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/TIE-ln%20Fighter.jpg",
 				"upgradeTypes": [
 					"Pilot",
-                    "Training"
+                    "Modification",
+                    "Title"
 				],
 				"points": 100,
 				"health": 4,
@@ -533,7 +549,8 @@
 				],
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/Luke%20Skywalker.jpg",
 				"upgradeTypes": [
-					"Command"
+					"Command",
+                    "Force"
 				],
 				"points": 110,
 				"health": 6,
@@ -558,7 +575,9 @@
 				],
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/Rebel%20Officer.jpg",
 				"upgradeTypes": [
-					"Command"
+					"Command",
+                    "Personnel",
+                    "Training"
 				],
 				"points": 50,
 				"health": 4,
@@ -586,6 +605,8 @@
 				"upgradeTypes": [
 					"Personnel",
                     "Weapon",
+                    "Gear",
+                    "Grenade",
                     "Training"
 				],
 				"points": 45,
@@ -611,7 +632,9 @@
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/Rebel%20Commandos.jpg",
 				"upgradeTypes": [
                     "Weapon",
-                    "Gear"
+                    "Gear",
+                    "Grenade",
+                    "Training"
 				],
 				"points": 60,
 				"health": 1,
@@ -634,9 +657,11 @@
 						"rank": "Support"
 					}
 				],
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/1.4FD%20P-Towers.jpg",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/1.4%20FD%20P-Towers.jpg",
 				"upgradeTypes": [
-					"Title"
+					"Modification",
+                    "Training",
+                    "Title"
 				],
 				"points": 90,
 				"health": 3,
@@ -688,7 +713,9 @@
 				],
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/reb/T1-B%20Hovertanks.jpg",
 				"upgradeTypes": [
-					"Hardpoint"
+					"Pilot",
+                    "Hardpoint",
+                    "Modification"
 				],
 				"points": 100,
 				"health": 3,
@@ -717,7 +744,7 @@
 				"upgradeTypes": [
 					"Pilot",
                     "Hardpoint",
-                    "Training"
+                    "Title"
 				],
 				"points": 100,
 				"health": 3,
@@ -746,6 +773,7 @@
 				"upgradeTypes": [
 					"Pilot",
                     "Ordnance",
+                    "Modification",
                     "Title"
 				],
 				"points": 125,
@@ -774,7 +802,8 @@
 				"upgradeTypes": [
 					"Pilot",
                     "Ordnance",
-                    "Modification"
+                    "Modification",
+                    "Title"
 				],
 				"points": 150,
 				"health": 6,
