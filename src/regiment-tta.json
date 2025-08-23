@@ -257,6 +257,36 @@
                 "type": "Pilot",
                 "effect": "Once per game, while you are defending or attacking, you may reroll 1 die.",
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Veteran%20Pilot.jpg"
+            },
+            {
+                "name": "Dark Lord's Presence",
+                "points": 25,
+                "factions": [""],
+                "availableIn": ["Darth Vader"],
+                "type": "Command",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Dark%20Lords%20Presence.jpg"
+            },
+            {
+                "name": "Beacon of Hope",
+                "points": 15,
+                "factions": [""],
+                "availableIn": ["Luke Skywalker"],
+                "type": "Command",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Beacon%20of%20Hope.jpg"
+            },
+            {
+                "name": "Aerial Tracking Unit",
+                "points": 15,
+                "factions": ["Rebel", "Empire", "Republic", "Separatist"],
+                "type": "Modification",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Aerial%20Tracking%20Unit.jpg"
+            },
+            {
+                "name": "Battle Meditation",
+                "points": 25,
+                "factions": ["Rebel", "Republic"],
+                "type": "Force",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Battle%20Meditation.jpg"
             }
             
 		],
