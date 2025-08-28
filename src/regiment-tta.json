@@ -307,6 +307,14 @@
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/DW-3%20Grenade%20Launcher.jpg"
 			},
             {
+                "name": "Electrobinoculars",
+                "points": 5,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "keywords": ["Spotter X"],
+                "type": "Gear",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Electrobinoculars.jpg"
+            },
+            {
                 "name": "Environmental Gear",
                 "points": 5,
                 "factions": ["Rebels", "Empire", "Republic", "Separatist"],
@@ -454,6 +462,14 @@
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/MS-1%20Heavy%20Cannon.jpg"
 			},
             {
+                "name": "Offensive Push",
+                "points": 5,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "keywords": [],
+                "type": "Training",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Offensive%20Push.jpg"
+            },
+            {
                 "name": "Overwatch",
                 "points": 20,
                 "factions": ["Rebels", "Empire", "Republic", "Separatist"],
@@ -463,12 +479,21 @@
             },
             {
                 "name": "Personal Energy Shields",
-                "points": 15,
+                "points": 10,
                 "factions": ["Rebels", "Empire", "Republic", "Separatist"],
                 "keywords": ["Shields X"],
                 "type": "Gear",
                 "requiresTier": "Corps",
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Personal%20Energy%20Shields.jpg"
+            },
+            {
+                "name": "Portable Deflector Shield",
+                "points": 15,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "keywords": ["Shields X"],
+                "type": "Modification",
+                "requiresTier": "Light",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Portable%20Deflector%20Shield.jpg"
             },
             {
 				"name": "Proton Bombs",
@@ -480,6 +505,47 @@
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Proton%20Bombs.jpg"
 			},
             {
+                "name": "Rebel Bodyguard",
+                "points": 30,
+                "factions": ["Rebels"],
+                "type": "Personnel",
+                "requiresTier": "Commander",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Rebel%20Bodyguard.jpg"
+            },
+            {
+                "name": "Rebel Trooper Platoon",
+                "points": 40,
+                "factions": [""],
+                "availableIn": ["Rebel Troopers"],
+                "type": "Personnel",
+                "keywords": ["Reinforced"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Rebel%20Trooper%20Platoon.jpg"
+            },
+            {
+                "name": "Recon Intel",
+                "points": 5,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "keywords": ["Scout"],
+                "type": "Gear",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Recon%20Intel.jpg"
+            },
+            {
+                "name": "Repeating Blasters",
+                "points": 20,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Weapon",
+                "keywords": ["Suppressive"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Repeating%20Blasters.jpg"
+            },
+            {
+                "name": "Rocket Launchers",
+                "points": 20,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Weapon",
+                "keywords": ["Impact 2"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Rocket%20Launchers.jpg"
+            },
+            {
                 "name": "Rogue Squadron",
                 "points": 15,
                 "factions": ["Rebels"],
@@ -490,6 +556,45 @@
                     "value": "Aerial Vehicle"
                 },
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Rogue%20Squadron.jpg"
+            },
+            {
+                "name": "Seize the Initiative",
+                "points": 5,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "keywords": [],
+                "type": "Training",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Seize%20the%20Initiative.jpg"
+            },
+            {
+                "name": "Sensor Array",
+                "points": 10,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Modification",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Sensor%20Array.jpg"
+            },
+            {
+				"name": "Side-Mount Blasters",
+				"points": 10,
+                "factions": [],
+                "availableIn": ["UT-60D U-wing"],
+				"type": "Hardpoint",
+                "keywords": ["Swivel", "Suppressive"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Side-Mount%20Blasters.jpg"
+			},
+            {
+                "name": "Situational Awareness",
+                "points": 5,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "keywords": [],
+                "type": "Training",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Situational%20Awareness.jpg"
+            },
+            {
+                "name": "Smoke Canisters",
+                "points": 5,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Grenade",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Smoke%20Canisters.jpg"
             },
             {
                 "name": "Stormtrooper Platoon",
@@ -506,6 +611,23 @@
                 "factions": ["Rebels", "Empire", "Republic", "Separatist"],
                 "type": "Command",
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Strategic%20Planner.jpg"
+            },
+            {
+				"name": "SW-4 Ion Cannon",
+				"points": 15,
+                "factions": [],
+                "availableIn": ["BTL-A4 Y-wing", "BTL-B Y-wing"],
+				"type": "Hardpoint",
+                "keywords": ["Impact X", "Ion X", "Swivel"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/SW-4%20Ion%20Cannon.jpg"
+			},
+            {
+                "name": "Targeting Scopes",
+                "points": 5,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "keywords": ["Precise X"],
+                "type": "Gear",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Targeting%20Scopes.jpg"
             },
             {
                 "name": "Veteran Pilot",
@@ -788,6 +910,34 @@
                 "keywords": [
                     "Armor X",
                     "Nimble",
+                    "Impact X"
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Aerial Vehicle"]
+            },
+            {
+                "name": "TIE/sa Bomber",
+                "factions": [
+					{
+						"name": "Empire",
+						"rank": "Heavy"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/imp/TIE-sa%20Bomber.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Ordnance",
+                    "Title"
+				],
+				"points": 100,
+				"health": 5,
+				"courage": 3,
+				"move": 10,
+                "defense": 5,
+                "keywords": [
+                    "Armor X",
+                    "Arsenal X",
                     "Impact X"
                 ],
                 "elements": 1,
