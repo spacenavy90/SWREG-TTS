@@ -273,10 +273,6 @@
                 "factions": ["Rebels", "Empire", "Republic", "Separatist"],
                 "keywords": [],
                 "type": "Gear",
-                "requiresProperty": {
-                    "property": "unittype",
-                    "value": "Trooper"
-                },
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Coolant%20Injectors.jpg"
             },
             {
@@ -287,6 +283,158 @@
                 "type": "Command",
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Dark%20Lords%20Presence.jpg"
             },
+            {
+                "name": "Defensive Driver",
+                "points": 15,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Pilot",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Defensive%20Driver.jpg"
+            },
+            {
+                "name": "Duck and Cover",
+                "points": 2,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Training",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Duck%20and%20Cover.jpg"
+            },
+            {
+				"name": "DW-3 Grenade Launcher",
+				"points": 10,
+                "factions": [],
+                "availableIn": ["AT-ST Walkers"],
+				"type": "Hardpoint",
+                "keywords": ["Blast"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/DW-3%20Grenade%20Launcher.jpg"
+			},
+            {
+                "name": "Environmental Gear",
+                "points": 5,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "keywords": ["Unhindered"],
+                "type": "Gear",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Environmental%20Gear.jpg"
+            },
+            {
+				"name": "T1-B Flak Pods",
+				"points": 15,
+                "factions": [],
+                "availableIn": ["T1-B Hovertanks"],
+				"type": "Hardpoint",
+                "keywords": ["Impact X","Lock-On"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Flak%20Pods%20T1B.jpg"
+			},
+            {
+                "name": "Flamethrowers",
+                "points": 20,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Weapon",
+                "keywords": ["Spray", "Suppressive"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Flamethrowers.jpg"
+            },
+            {
+                "name": "Force Choke",
+                "points": 15,
+                "factions": ["Empire", "Separatist"],
+                "type": "Force",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Force%20Choke.jpg"
+            },
+            {
+                "name": "Force Push",
+                "points": 15,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Force",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Force%20Push.jpg"
+            },
+            {
+                "name": "Frag Grenades",
+                "points": 5,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Grenade",
+                "keywords": ["Critical X"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Fragmentation%20Grenades.jpg"
+            },
+            {
+				"name": "Heavy Flamethrower",
+				"points": 20,
+                "factions": [],
+                "availableIn": ["AT-AT"],
+				"type": "Hardpoint",
+                "keywords": ["Spray", "Suppressive"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Heavy%20Flamethrower.jpg"
+			},
+            {
+                "name": "Hotshot Ace",
+                "points": 15,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Pilot",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Hotshot%20Ace.jpg"
+            },
+            {
+                "name": "Imperial Army Platoon",
+                "points": 40,
+                "factions": [""],
+                "availableIn": ["Imperial Army Troopers"],
+                "type": "Personnel",
+                "keywords": ["Reinforced"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/IAT%20Platoon.jpg"
+            },
+            {
+                "name": "Impact Grenades",
+                "points": 5,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Grenade",
+                "keywords": ["Impact X"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Impact%20Grenades.jpg"
+            },
+            {
+                "name": "Imperial Bodyguard",
+                "points": 30,
+                "factions": ["Empire"],
+                "type": "Personnel",
+                "requiresTier": "Commander",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Imperial%20Bodyguard.jpg"
+            },
+            {
+                "name": "Ion Disruptors",
+                "points": 20,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Weapon",
+                "keywords": ["Ion X"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Ion%20Disruptors.jpg"
+            },
+            {
+                "name": "Ion Grenades",
+                "points": 5,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Grenade",
+                "keywords": ["Ion X"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Ion%20Grenades.jpg"
+            },
+            {
+                "name": "Jedi Mind Trick",
+                "points": 10,
+                "factions": ["Rebels", "Republic"],
+                "type": "Force",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Jedi%20Mind%20Trick.jpg"
+            },
+            {
+				"name": "Laser Cannon Mount (A-A5)",
+				"points": 10,
+                "factions": [],
+                "availableIn": ["A-A5 Speeder Trucks"],
+				"type": "Hardpoint",
+                "keywords": ["Swivel"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Laser%20Cannon%20Mount%20AA5.jpg"
+			},
+            {
+				"name": "Laser Cannon Mount (ITT)",
+				"points": 10,
+                "factions": [],
+                "availableIn": ["Imperial Troop Transports"],
+				"type": "Hardpoint",
+                "keywords": ["Swivel"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Laser%20Cannon%20Mount%20ITT.jpg"
+			},
             {
 				"name": "Mo/Dk Power Harpoon",
 				"points": 10,
@@ -306,6 +454,14 @@
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/MS-1%20Heavy%20Cannon.jpg"
 			},
             {
+                "name": "Overwatch",
+                "points": 20,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "keywords": [],
+                "type": "Training",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Overwatch.jpg"
+            },
+            {
                 "name": "Personal Energy Shields",
                 "points": 15,
                 "factions": ["Rebels", "Empire", "Republic", "Separatist"],
@@ -324,13 +480,40 @@
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Proton%20Bombs.jpg"
 			},
             {
+                "name": "Rogue Squadron",
+                "points": 15,
+                "factions": ["Rebels"],
+                "type": "Title",
+                "limit": 2,
+                "requiresProperty": {
+                    "property": "unittype",
+                    "value": "Aerial Vehicle"
+                },
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Rogue%20Squadron.jpg"
+            },
+            {
+                "name": "Stormtrooper Platoon",
+                "points": 45,
+                "factions": [""],
+                "availableIn": ["Stormtroopers"],
+                "type": "Personnel",
+                "keywords": ["Reinforced"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Stormtrooper%20Platoon.jpg"
+            },
+            {
+                "name": "Strategic Planner",
+                "points": 20,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Command",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Strategic%20Planner.jpg"
+            },
+            {
                 "name": "Veteran Pilot",
                 "points": 5,
                 "factions": ["Rebels", "Empire", "Republic", "Separatist"],
                 "type": "Pilot",
-                "effect": "Once per game, while you are defending or attacking, you may reroll 1 die.",
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Veteran%20Pilot.jpg"
-            }         
+            }
 		],
 		"factions": [
 			{
@@ -776,7 +959,7 @@
                 "unittype": ["Repulsor Vehicle"]
             },
             {
-                "name": "T-1B Hovertanks",
+                "name": "T1-B Hovertanks",
                 "factions": [
 					{
 						"name": "Rebels",
@@ -1272,6 +1455,22 @@
             {
 				"name": "Lock-On",
 				"definition": "When the defender is an aerial vehicle unit type, weapons with the Lock-On keyword have a -1 bonus to hit and aerial vehicles do not benefit from cover."
+			},
+            {
+				"name": "Reinforced",
+				"definition": "A unit with the Reinforced keyword has the following effects: The unit’s cohesion distance increases to Range 1 instead of the standard ½ Range. When rallying, this unit saves on a 4+ instead. This unit gains +1 to its courage value. Reinforced units count as 2 units for the purposes of Transport X."
+			},
+            {
+				"name": "Unhindered",
+				"definition": "You ignore the effects of difficult terrain."
+			},
+            {
+				"name": "Spray",
+				"definition": "When a unit adds a weapon that has the Spray keyword to the attack pool, that weapon contributes its dice a number of times equal to the number of miniatures in the defending unit."
+			},
+            {
+				"name": "Critical X",
+				"definition": "When a unit rolls attack pool with the Critical X keyword, during the Convert Attack Dice step it may convert up to X critical miss roll results (1) to critical hit results (8)."
 			}
 		]
 	}
