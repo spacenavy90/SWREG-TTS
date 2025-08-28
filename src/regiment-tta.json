@@ -197,7 +197,7 @@
             {
                 "name": "Personal Energy Shields",
                 "points": 15,
-                "factions": ["Rebel", "Empire", "Republic", "Separatist"],
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
                 "keywords": ["Shields X"],
                 "type": "Gear",
                 "requiresTier": "Corps",
@@ -206,7 +206,7 @@
             {
                 "name": "Coolant Injectors",
                 "points": 10,
-                "factions": ["Rebel", "Empire", "Republic", "Separatist"],
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
                 "keywords": [],
                 "type": "Gear",
                 "requiresProperty": {
@@ -217,8 +217,8 @@
             },
             {
                 "name": "Advanced Body Armor",
-                "points": 10,
-                "factions": ["Rebel", "Empire", "Republic", "Separatist"],
+                "points": 20,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
                 "type": "Gear",
                 "requiresTier": "Corps",
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Advanced%20Body%20Armor.jpg"
@@ -253,7 +253,7 @@
             {
                 "name": "Veteran Pilot",
                 "points": 5,
-                "factions": ["Rebel", "Empire", "Republic", "Separatist"],
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
                 "type": "Pilot",
                 "effect": "Once per game, while you are defending or attacking, you may reroll 1 die.",
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Veteran%20Pilot.jpg"
@@ -277,16 +277,16 @@
             {
                 "name": "Aerial Tracking Unit",
                 "points": 15,
-                "factions": ["Rebel", "Empire", "Republic", "Separatist"],
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
                 "type": "Modification",
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Aerial%20Tracking%20Unit.jpg"
             },
             {
-                "name": "Battle Meditation",
+                "name": "Battle Coordination",
                 "points": 25,
-                "factions": ["Rebel", "Republic"],
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
                 "type": "Force",
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Battle%20Meditation.jpg"
+                "imageUrl": ""
             }
             
 		],
