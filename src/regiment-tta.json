@@ -195,13 +195,77 @@
 		],
 		"upgrades": [
             {
-                "name": "Personal Energy Shields",
-                "points": 15,
+				"name": "88 Twin Light Blaster",
+				"points": 15,
+                "factions": [],
+                "availableIn": ["AT-ST Walkers"],
+				"type": "Hardpoint",
+                "keywords": ["Impact X"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/88%20Twin%20Light%20Blaster.jpg"
+			},
+            {
+				"name": "AT-ST Mortar Launcher",
+				"points": 25,
+                "factions": [],
+                "availableIn": ["AT-ST Walkers"],
+				"type": "Hardpoint",
+                "keywords": ["Indirect", "Suppressive"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/AT-ST%20Mortar%20Launcher.jpg"
+			},
+            {
+                "name": "Advanced Body Armor",
+                "points": 20,
                 "factions": ["Rebels", "Empire", "Republic", "Separatist"],
-                "keywords": ["Shields X"],
                 "type": "Gear",
                 "requiresTier": "Corps",
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Personal%20Energy%20Shields.jpg"
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Advanced%20Body%20Armor.jpg"
+            },
+            {
+                "name": "Aerial Tracking Unit",
+                "points": 15,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Modification",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Aerial%20Tracking%20Unit.jpg"
+            },
+            {
+                "name": "Anti-Air Launchers",
+                "points": 20,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Weapon",
+                "keywords": ["Impact X", "Lock-On"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Anti-Air%20Launchers.jpg"
+            },
+            {
+				"name": "Anti-Air Mount (ITT)",
+				"points": 15,
+                "factions": [],
+                "availableIn": ["Imperial Troop Transports"],
+				"type": "Hardpoint",
+                "keywords": ["Impact X", "Lock-On", "Swivel"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Anti-Air%20Mount%20ITT.jpg"
+			},
+            {
+                "name": "Battle Coordination",
+                "points": 25,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Force",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Battle%20Coordination.jpg"
+            },
+            {
+                "name": "Beacon of Hope",
+                "points": 15,
+                "factions": [""],
+                "availableIn": ["Luke Skywalker"],
+                "type": "Command",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Beacon%20of%20Hope.jpg"
+            },
+            {
+                "name": "Concussion Grenades",
+                "points": 5,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Grenade",
+                "keywords": ["Blast"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Concussion%20Grenades.jpg"
             },
             {
                 "name": "Coolant Injectors",
@@ -216,22 +280,13 @@
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Coolant%20Injectors.jpg"
             },
             {
-                "name": "Advanced Body Armor",
-                "points": 20,
-                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
-                "type": "Gear",
-                "requiresTier": "Corps",
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Advanced%20Body%20Armor.jpg"
+                "name": "Dark Lord's Presence",
+                "points": 25,
+                "factions": [""],
+                "availableIn": ["Darth Vader"],
+                "type": "Command",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Dark%20Lords%20Presence.jpg"
             },
-			{
-				"name": "FF-4 Medium Repeaters",
-				"points": 15,
-                "factions": [],
-                "availableIn": ["AT-AT"],
-				"type": "Hardpoint",
-                "keywords": ["Impact X"],
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/FF-4%20Medium%20Repeaters.jpg"
-			},
             {
 				"name": "Mo/Dk Power Harpoon",
 				"points": 10,
@@ -241,6 +296,24 @@
                 "keywords": ["Impact X","Fixed: Rear","Tow Cable"],
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Mo-Dk%20Power%20Harpoon.jpg"
 			},
+			{
+				"name": "MS-1 Heavy Cannon",
+				"points": 35,
+                "factions": [],
+                "availableIn": ["AT-AT"],
+				"type": "Hardpoint",
+                "keywords": ["Impact X", "Suppressive"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/MS-1%20Heavy%20Cannon.jpg"
+			},
+            {
+                "name": "Personal Energy Shields",
+                "points": 15,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "keywords": ["Shields X"],
+                "type": "Gear",
+                "requiresTier": "Corps",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Personal%20Energy%20Shields.jpg"
+            },
             {
 				"name": "Proton Bombs",
 				"points": 15,
@@ -257,38 +330,7 @@
                 "type": "Pilot",
                 "effect": "Once per game, while you are defending or attacking, you may reroll 1 die.",
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Veteran%20Pilot.jpg"
-            },
-            {
-                "name": "Dark Lord's Presence",
-                "points": 25,
-                "factions": [""],
-                "availableIn": ["Darth Vader"],
-                "type": "Command",
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Dark%20Lords%20Presence.jpg"
-            },
-            {
-                "name": "Beacon of Hope",
-                "points": 15,
-                "factions": [""],
-                "availableIn": ["Luke Skywalker"],
-                "type": "Command",
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Beacon%20of%20Hope.jpg"
-            },
-            {
-                "name": "Aerial Tracking Unit",
-                "points": 15,
-                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
-                "type": "Modification",
-                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Aerial%20Tracking%20Unit.jpg"
-            },
-            {
-                "name": "Battle Coordination",
-                "points": 25,
-                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
-                "type": "Force",
-                "imageUrl": ""
-            }
-            
+            }         
 		],
 		"factions": [
 			{
@@ -1157,7 +1199,7 @@
 			},
             {
 				"name": "Compel",
-				"definition": "After another allied Trooper unit of the matching Rank or unit type within 2 of an allied unit with the Compel keyword Rallies and is Suppressed but not Panicked, at the start of its Make Actions step, it may gain 1 Suppression token to make a free Move action."
+				"definition": "After another allied Trooper unit of the matching Rank or unit type within range 2 of an allied unit with the Compel keyword Rallies, at the start of its Make Actions step, it may gain 1 Suppression token to make a free Move action."
 			},
             {
 				"name": "Spotter X",
@@ -1177,7 +1219,7 @@
 			},
             {
 				"name": "Loiter",
-				"definition": "Aerial vehicles with the Loiter keyword are not required to make compulsory moves nor are they removed from the battlefield at the end phase."
+				"definition": "Aerial vehicles with the Loiter keyword are not required to make compulsory moves nor are they removed from the battlefield at the end phase. They activate and deploy like typical units would."
 			},
             {
 				"name": "Low Profile",
@@ -1197,7 +1239,7 @@
 			},
             {
 				"name": "Ion X",
-				"definition": "A vehicle or droid trooper unit that suffers wounds after defending against an attack that included a weapon with the Ion X keyword gains X ion tokens. At the start of a unit’s activation, roll one defense die for every ion token that unit has. On a roll result of 1-4, that unit performs one fewer action during its activation. At the end of a unit’s activation, it removes any ion tokens that it has. Units with the Shields X keyword may not re-roll defense dice using its effect."
+				"definition": "A vehicle or droid unit that suffers wounds after defending against an attack that includes a weapon with the Ion X keyword gains X Ion tokens. At the start of a unit’s activation, roll 1 defense die for each Ion token attached to that unit. On a roll result of 5+, remove 1 Ion token. A unit may not attack if it has 1 or more Ion tokens attached to it. Units with the Shields X keyword may not re-roll defense dice using its effect when a weapon with the Ion X keyword is present in the attack pool."
 			},
             {
 				"name": "Tow Cable",
@@ -1225,7 +1267,11 @@
 			},
             {
 				"name": "Indirect",
-				"definition": "Indirect represents the strengths and limitations of long-range battlefield artillery. Weapons with this keyword may fire over terrain and other units, allowing them to strike at targets outside normal lines of sight but at the cost of accuracy unless coordinated with spotters."
+				"definition": "When making an attack with a weapon that has the Indirect keyword, follow these rules: The attack ignores all blocking terrain and other units when tracing line of sight. If no friendly unit is both at Range 2 and has line of sight to the defending unit, the attack is considered unguided. In this case, the attack only hits on critical hits (results of 8). If any friendly unit is at Range 2 and has line of sight to the defending unit, the attack proceeds normally, using the weapon’s listed to-hit value. Weapons with the Indirect keyword may not target Aerial vehicles."
+			},
+            {
+				"name": "Lock-On",
+				"definition": "When the defender is an aerial vehicle unit type, weapons with the Lock-On keyword have a -1 bonus to hit and aerial vehicles do not benefit from cover."
 			}
 		]
 	}
