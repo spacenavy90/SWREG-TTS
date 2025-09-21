@@ -1261,6 +1261,593 @@
                 "elements": 1,
                 "unlimited": true,
                 "unittype": ["Aerial Vehicle"]
+            },
+            {
+                "name": "Obi-Wan Kenobi",
+                "factions": [
+					{
+						"name": "Republic",
+						"rank": "Commander"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/gar/Obi-Wan%20Kenobi.jpg",
+				"upgradeTypes": [
+					"Command",
+                    "Force"
+				],
+				"points": 120,
+				"health": 6,
+				"courage": 3,
+				"move": 4,
+                "defense": 4,
+                "keywords": [
+                    ""
+                ],
+                "elements": 1,
+                "unittype": ["Trooper"]
+            },
+            {
+                "name": "Clone Commander",
+                "factions": [
+					{
+						"name": "Republic",
+						"rank": "Commander"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/gar/Clone%20Commander.jpg",
+				"upgradeTypes": [
+					"Command",
+                    "Personnel",
+                    "Training",
+                    "Title"
+				],
+				"points": 65,
+				"health": 4,
+				"courage": 2,
+				"move": 4,
+                "defense": 4,
+                "keywords": [
+                    ""
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Clone Trooper"]
+            },
+            {
+                "name": "Clone Troopers",
+                "factions": [
+					{
+						"name": "Republic",
+						"rank": "Corps"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/gar/Clone%20Troopers.jpg",
+				"upgradeTypes": [
+                    "Personnel",
+					"Weapon",
+                    "Gear",
+                    "Grenade",
+                    "Training",
+                    "Title"
+				],
+				"points": 60,
+				"health": 1,
+				"courage": 2,
+				"move": 4,
+                "defense": 5,
+                "keywords": [
+                    ""
+                ],
+                "elements": 4,
+                "unlimited": true,
+                "unittype": ["Clone Trooper"]
+            },
+            {
+                "name": "ARC Troopers",
+                "factions": [
+					{
+						"name": "Republic",
+						"rank": "Special Forces"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/gar/ARC%20Troopers.jpg",
+				"upgradeTypes": [
+					"Weapon",
+                    "Gear",
+                    "Grenade",
+                    "Training",
+                    "Title"
+				],
+				"points": 75,
+				"health": 1,
+				"courage": 2,
+				"move": 4,
+                "defense": 4,
+                "keywords": [
+                    ""
+                ],
+                "elements": 4,
+                "unlimited": true,
+                "unittype": ["Clone Trooper"]
+            },
+            {
+                "name": "AT-RT Scouts",
+                "factions": [
+					{
+						"name": "Republic",
+						"rank": "Light"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/gar/AT-RT.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Hardpoint"
+				],
+				"points": 65,
+				"health": 2,
+				"courage": 0,
+				"move": 6,
+                "defense": 4,
+                "keywords": [
+                    ""
+                ],
+                "elements": 3,
+                "unlimited": true,
+                "unittype": ["Walker Vehicle"]
+            },
+            {
+                "name": "Saber-class Tanks",
+                "factions": [
+					{
+						"name": "Republic",
+						"rank": "Light"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/gar/TX-130.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Hardpoint"
+				],
+				"points": 125,
+				"health": 4,
+				"courage": 0,
+				"move": 6,
+                "defense": 5,
+                "keywords": [
+                    ""
+                ],
+                "elements": 2,
+                "unlimited": true,
+                "unittype": ["Repulsor Vehicle"]
+            },
+            {
+                "name": "AV-7 Cannon",
+                "factions": [
+					{
+						"name": "Republic",
+						"rank": "Support"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/gar/AV-7%20Cannon.jpg",
+				"upgradeTypes": [
+					"Modification",
+                    "Ordnance"
+				],
+				"points": 100,
+				"health": 4,
+				"courage": 2,
+				"move": 4,
+                "defense": 5,
+                "keywords": [
+                    ""
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Walker Vehicle"]
+            },
+            {
+                "name": "AT-TE",
+                "factions": [
+					{
+						"name": "Republic",
+						"rank": "Heavy"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/gar/AT-TE.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Hardpoint",
+                    "Modification"
+				],
+				"points": 150,
+				"health": 10,
+				"courage": 6,
+				"move": 4,
+                "defense": 4,
+                "keywords": [
+                    ""
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Walker Vehicle"]
+            },
+            {
+                "name": "Delta-7 Starfighter",
+                "factions": [
+					{
+						"name": "Republic",
+						"rank": "Heavy"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/gar/Delta-7.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Modification",
+                    "Title"
+				],
+				"points": 125,
+				"health": 4,
+				"courage": 3,
+				"move": 12,
+                "defense": 5,
+                "keywords": [
+                    ""
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Aerial Vehicle"]
+            },
+            {
+                "name": "BTL-B Y-wing",
+                "factions": [
+					{
+						"name": "Republic",
+						"rank": "Heavy"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/gar/Clone%20Y-wing.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Hardpoint",
+                    "Ordnance",
+                    "Modification",
+                    "Title"
+				],
+				"points": 125,
+				"health": 6,
+				"courage": 3,
+				"move": 10,
+                "defense": 5,
+                "keywords": [
+                    ""
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Aerial Vehicle"]
+            },
+            {
+                "name": "LAAT/i Gunship",
+                "factions": [
+					{
+						"name": "Republic",
+						"rank": "Heavy"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/gar/LAAT-i.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Hardpoint",
+                    "Modification",
+                    "Title"
+				],
+				"points": 140,
+				"health": 6,
+				"courage": 3,
+				"move": 10,
+                "defense": 5,
+                "keywords": [
+                    ""
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Aerial Vehicle"]
+            },
+            {
+                "name": "General Grievous",
+                "factions": [
+					{
+						"name": "Separatist",
+						"rank": "Commander"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/cis/General%20Grievous.jpg",
+				"upgradeTypes": [
+					"Command",
+                    "Command"
+				],
+				"points": 120,
+				"health": 8,
+				"courage": 2,
+				"move": 5,
+                "defense": 4,
+                "keywords": [
+                    ""
+                ],
+                "elements": 1,
+                "unittype": ["Trooper"]
+            },
+            {
+                "name": "Super Tactical Droid",
+                "factions": [
+					{
+						"name": "Separatist",
+						"rank": "Commander"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/cis/Super%20Tactical%20Droid.jpg",
+				"upgradeTypes": [
+					"Command",
+                    "Personnel",
+                    "Training",
+                    "Title"
+				],
+				"points": 50,
+				"health": 4,
+				"courage": 2,
+				"move": 4,
+                "defense": 5,
+                "keywords": [
+                    ""
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Droid Trooper"]
+            },
+            {
+                "name": "B1 Battle Droids",
+                "factions": [
+					{
+						"name": "Separatist",
+						"rank": "Corps"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/cis/B1%20Battle%20Droids.jpg",
+				"upgradeTypes": [
+                    "Personnel",
+					"Weapon",
+                    "Gear"
+				],
+				"points": 40,
+				"health": 1,
+				"courage": 1,
+				"move": 4,
+                "defense": 6,
+                "keywords": [
+                    ""
+                ],
+                "elements": 6,
+                "unlimited": true,
+                "unittype": ["Droid Trooper"]
+            },
+            {
+                "name": "B2 Super Battle Droids",
+                "factions": [
+					{
+						"name": "Separatist",
+						"rank": "Corps"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/cis/B2%20Super%20Battle%20Droids.jpg",
+				"upgradeTypes": [
+					"Personnel",
+                    "Hardpoint"
+				],
+				"points": 60,
+				"health": 2,
+				"courage": 2,
+				"move": 4,
+                "defense": 4,
+                "keywords": [
+                    ""
+                ],
+                "elements": 4,
+                "unlimited": true,
+                "unittype": ["Droid Trooper"]
+            },
+            {
+                "name": "Droidekas",
+                "factions": [
+					{
+						"name": "Separatist",
+						"rank": "Special Forces"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/cis/Droidekas.jpg",
+				"upgradeTypes": [
+                    "Hardpoint"
+				],
+				"points": 110,
+				"health": 3,
+				"courage": 0,
+				"move": 5,
+                "defense": 5,
+                "keywords": [
+                    ""
+                ],
+                "elements": 2,
+                "unlimited": true,
+                "unittype": ["Droid Emplacement"]
+            },
+            {
+                "name": "STAP Riders",
+                "factions": [
+					{
+						"name": "Separatist",
+						"rank": "Light"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/cis/STAP.jpg",
+				"upgradeTypes": [
+					"Pilot"
+				],
+				"points": 75,
+				"health": 2,
+				"courage": 0,
+				"move": 7,
+                "defense": 5,
+                "keywords": [
+                    ""
+                ],
+                "elements": 3,
+                "unlimited": true,
+                "unittype": ["Repulsor Vehicle"]
+            },
+            {
+                "name": "AAT Battle Tanks",
+                "factions": [
+					{
+						"name": "Separatist",
+						"rank": "Light"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/cis/AAT.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Ordnance"
+				],
+				"points": 125,
+				"health": 5,
+				"courage": 0,
+				"move": 5,
+                "defense": 4,
+                "keywords": [
+                    ""
+                ],
+                "elements": 2,
+                "unlimited": true,
+                "unittype": ["Repulsor Vehicle"]
+            },
+            {
+                "name": "J-1 Proton Cannon",
+                "factions": [
+					{
+						"name": "Separatist",
+						"rank": "Support"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/cis/J-1%20Proton.jpg",
+				"upgradeTypes": [
+					"Modification",
+                    "Ordnance"
+				],
+				"points": 100,
+				"health": 4,
+				"courage": 2,
+				"move": 4,
+                "defense": 5,
+                "keywords": [
+                    ""
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Walker Vehicle"]
+            },
+            {
+                "name": "MTT",
+                "factions": [
+					{
+						"name": "Separatist",
+						"rank": "Heavy"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/cis/MTT.jpg",
+				"upgradeTypes": [
+					"Pilot"
+				],
+				"points": 125,
+				"health": 9,
+				"courage": 6,
+				"move": 5,
+                "defense": 4,
+                "keywords": [
+                    ""
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Repulsor Vehicle"]
+            },
+            {
+                "name": "Droid Tri-Fighter",
+                "factions": [
+					{
+						"name": "Separatist",
+						"rank": "Heavy"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/cis/Tri-Droid.jpg",
+				"upgradeTypes": [
+					"Ordnance"
+				],
+				"points": 95,
+				"health": 4,
+				"courage": 2,
+				"move": 14,
+                "defense": 5,
+                "keywords": [
+                    ""
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Aerial Vehicle"]
+            },
+            {
+                "name": "Hyena Droid Bomber",
+                "factions": [
+					{
+						"name": "Separatist",
+						"rank": "Heavy"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/cis/Hyena%20Bomber.jpg",
+				"upgradeTypes": [
+					"Ordnance"
+				],
+				"points": 95,
+				"health": 4,
+				"courage": 2,
+				"move": 14,
+                "defense": 5,
+                "keywords": [
+                    ""
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Aerial Vehicle"]
+            },
+            {
+                "name": "HMP Droid Gunship",
+                "factions": [
+					{
+						"name": "Separatist",
+						"rank": "Heavy"
+					}
+				],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/units/cis/HMP%20Gunship.jpg",
+				"upgradeTypes": [
+					"Pilot",
+                    "Ordnance"
+				],
+				"points": 125,
+				"health": 5,
+				"courage": 3,
+				"move": 10,
+                "defense": 5,
+                "keywords": [
+                    ""
+                ],
+                "elements": 1,
+                "unlimited": true,
+                "unittype": ["Aerial Vehicle"]
             }
             
         ],
