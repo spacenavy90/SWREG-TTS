@@ -475,6 +475,11 @@
                 "factions": ["Rebels", "Empire", "Republic", "Separatist"],
                 "keywords": [],
                 "type": "Training",
+                "requiresProperty": {
+                    "property": "unittype",
+                    "value": ["Trooper", "Emplacement"],
+                    "operator": "OR"
+                },
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Overwatch.jpg"
             },
             {
@@ -1580,7 +1585,7 @@
 			},
             {
 				"name": "Deflect",
-				"definition": "While a unit with the Deflect keyword defends against a Ranged attack, it converts critical fail roll results to critical saves. Additionally, during the Roll Defense Dice step, before converting roll results, the attacker suffers 1 Wound if there is at least 1 critical fail roll result in the defense roll. While defending against an attack made only with weapons that have the High Velocity keyword, the Deflect keyword has no effect."
+				"definition": "While a unit with the Deflect keyword defends against a Ranged attack, it converts critical fail roll  results (1) to critical saves (6). Additionally, during the Roll Defense Dice step, before converting roll results, the attacker suffers 1 Wound if there is at least 1 critical fail roll result in the defense roll. Only 1 Wound can be applied to the Attacker this way per attack. While defending against an attack made only with weapons that have the High Velocity keyword, the Deflect keyword has no effect."
 			},
             {
 				"name": "Swivel",
