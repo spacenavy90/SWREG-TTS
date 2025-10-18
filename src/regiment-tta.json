@@ -640,6 +640,64 @@
                 "factions": ["Rebels", "Empire", "Republic", "Separatist"],
                 "type": "Pilot",
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Veteran%20Pilot.jpg"
+            },
+            {
+                "name": "B1 Battle Droid Platoon",
+                "points": 40,
+                "factions": [""],
+                "availableIn": ["B1 Battle Droids"],
+                "type": "Personnel",
+                "keywords": ["Reinforced"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/B1%20Droid%20Platoon.jpg"
+            },
+            {
+                "name": "B2 Battle Droid Platoon",
+                "points": 55,
+                "factions": [""],
+                "availableIn": ["B2 Super Battle Droids"],
+                "type": "Personnel",
+                "keywords": ["Reinforced"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/B2%20SBD%20Platoon.jpg"
+            },
+            {
+                "name": "Clone Trooper Platoon",
+                "points": 55,
+                "factions": [""],
+                "availableIn": ["Clone Troopers"],
+                "type": "Personnel",
+                "keywords": ["Reinforced"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Clone%20Trooper%20Platoon.jpg"
+            },
+            {
+                "name": "Clone Bodyguard",
+                "points": 30,
+                "factions": ["Republic"],
+                "type": "Personnel",
+                "requiresTier": "Commander",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Clone%20Bodyguard.jpg"
+            },
+            {
+                "name": "Droid Bodyguard",
+                "points": 30,
+                "factions": ["Separatist"],
+                "type": "Personnel",
+                "requiresTier": "Commander",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Droid%20Bodyguard.jpg"
+            },
+            {
+                "name": "By Your Command",
+                "points": 10,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Command",
+                "keywords": ["Exemplar"],
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/By%20Your%20Command.jpg"
+            },
+            {
+                "name": "Natural Leader",
+                "points": 5,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Command",
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Natural%20Leader.jpg"
             }
 		],
 		"factions": [
@@ -702,6 +760,7 @@
 				"upgradeTypes": [
 					"Command",
                     "Personnel",
+                    "Gear",
                     "Training"
 				],
 				"points": 50,
@@ -987,6 +1046,7 @@
 				"upgradeTypes": [
 					"Command",
                     "Personnel",
+                    "Gear",
                     "Training"
 				],
 				"points": 50,
@@ -1298,6 +1358,7 @@
 				"upgradeTypes": [
 					"Command",
                     "Personnel",
+                    "Gear",
                     "Training",
                     "Title"
 				],
@@ -1588,6 +1649,7 @@
 				"upgradeTypes": [
 					"Command",
                     "Personnel",
+                    "Gear",
                     "Training",
                     "Title"
 				],
@@ -2213,6 +2275,10 @@
             {
 				"name": "Critical X",
 				"definition": "When a unit rolls attack pool with the Critical X keyword, during the Convert Attack Dice step it may convert up to X critical miss roll results (1) to critical hit results (8)."
+			},
+            {
+				"name": "Exemplar",
+				"definition": "While attacking or defending, if a friendly unit is at range 2 and in LOS of one or more friendly units that have the Exemplar keyword and that share the same faction or affiliation as that attacking or defending unit, that attacking or defending unit may spend one aim, dodge, or surge token belonging to one of those units with Exemplar as if that attacking or defending unit had the token."
 			}
 		]
 	}
