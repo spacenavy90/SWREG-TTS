@@ -704,7 +704,7 @@
                 "points": 5,
                 "factions": ["Rebels", "Empire", "Republic", "Separatist"],
                 "type": "Pilot",
-                "imageUrl": ""
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Stunt%20Driver.jpg"
             },
             {
 				"name": "Mass Driver Cannon",
@@ -713,7 +713,7 @@
                 "availableIn": ["AT-TE"],
 				"type": "Hardpoint",
                 "keywords": ["Impact X", "High Velocity"],
-                "imageUrl": ""
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Mass%20Driver%20Cannon.jpg"
 			},
             {
 				"name": "AT-RT Laser Cannon",
@@ -722,7 +722,7 @@
                 "availableIn": ["AT-RT Scouts"],
 				"type": "Hardpoint",
                 "keywords": ["Impact X"],
-                "imageUrl": ""
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/AT-RT%20Laser%20Cannon.jpg"
 			},
             {
 				"name": "AT-RT Rotary Cannon",
@@ -731,7 +731,7 @@
                 "availableIn": ["AT-RT Scouts"],
 				"type": "Hardpoint",
                 "keywords": [""],
-                "imageUrl": ""
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/AT-RT%20Rotary%20Cannon.jpg"
 			},
             {
 				"name": "AT-RT Flamer",
@@ -740,7 +740,7 @@
                 "availableIn": ["AT-RT Scouts"],
 				"type": "Hardpoint",
                 "keywords": ["Spray","Suppressive"],
-                "imageUrl": ""
+                "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/AT-RT%20Flamer.jpg"
 			}
 		],
 		"factions": [
