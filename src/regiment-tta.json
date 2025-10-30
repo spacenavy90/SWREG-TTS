@@ -698,7 +698,50 @@
                 "factions": ["Rebels", "Empire", "Republic", "Separatist"],
                 "type": "Command",
                 "imageUrl": "https://raw.githubusercontent.com/spacenavy90/SWREG-TTS/refs/heads/master/cards/upgrades/Natural%20Leader.jpg"
-            }
+            },
+            {
+                "name": "Stunt Driver",
+                "points": 5,
+                "factions": ["Rebels", "Empire", "Republic", "Separatist"],
+                "type": "Pilot",
+                "imageUrl": ""
+            },
+            {
+				"name": "Mass Driver Cannon",
+				"points": 35,
+                "factions": [],
+                "availableIn": ["AT-TE"],
+				"type": "Hardpoint",
+                "keywords": ["Impact X", "High Velocity"],
+                "imageUrl": ""
+			},
+            {
+				"name": "AT-RT Laser Cannon",
+				"points": 15,
+                "factions": [],
+                "availableIn": ["AT-RT Scouts"],
+				"type": "Hardpoint",
+                "keywords": ["Impact X"],
+                "imageUrl": ""
+			},
+            {
+				"name": "AT-RT Rotary Cannon",
+				"points": 15,
+                "factions": [],
+                "availableIn": ["AT-RT Scouts"],
+				"type": "Hardpoint",
+                "keywords": [""],
+                "imageUrl": ""
+			},
+            {
+				"name": "AT-RT Flamer",
+				"points": 15,
+                "factions": [],
+                "availableIn": ["AT-RT Scouts"],
+				"type": "Hardpoint",
+                "keywords": ["Spray","Suppressive"],
+                "imageUrl": ""
+			}
 		],
 		"factions": [
 			{
@@ -1712,7 +1755,7 @@
                 "keywords": [
                     ""
                 ],
-                "elements": 4,
+                "elements": 3,
                 "unlimited": true,
                 "unittype": ["Droid Trooper"]
             },
@@ -2279,6 +2322,10 @@
             {
 				"name": "Exemplar",
 				"definition": "While attacking or defending, if a friendly unit is at range 2 and in LOS of one or more friendly units that have the Exemplar keyword and that share the same faction or affiliation as that attacking or defending unit, that attacking or defending unit may spend one aim, dodge, or surge token belonging to one of those units with Exemplar as if that attacking or defending unit had the token."
+			},
+            {
+				"name": "High Velocity",
+				"definition": "A unit that defends against an attack that only has weapons with High Velocity in its Attack Pool cannot spend Dodge tokens during the Apply Dodge and Cover step."
 			}
 		]
 	}
