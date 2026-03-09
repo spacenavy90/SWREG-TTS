@@ -1,0 +1,12 @@
+<Button id="ToggleImporterBtn" width="120" height="40" rectAlignment="UpperRight" offsetXY="-300 -20"  onClick="toggleImporterMenu" color="#4CAF50" textColor="White" fontStyle="Bold">Army List Menu</Button>
+
+<Panel id="ArmyImporterPanel" active="false" width="400" height="150" rectAlignment="UpperRight" offsetXY="-20 -70" color="#333333E6" allowDragging="true" returnToOriginalPositionWhenReleased="false">
+    <VerticalLayout padding="10 10 10 10" spacing="10">
+        <Text color="White" fontSize="18" fontStyle="Bold" alignment="MiddleCenter">Regiment Army List Importer</Text>
+        <InputField id="JSONInput" onValueChanged="onJSONInputChanged" placeholder="Paste Army TTS Code Here..." lineType="MultiLineNewline" color="#FFFFFF" textColor="#000000" />
+        <HorizontalLayout spacing="10">
+            <Button id="ImportButton" onClick="onClickImport" color="#4CAF50" textColor="White" fontSize="16" fontStyle="Bold">Spawn List</Button>
+            <Button id="ClearButton" onClick="onClickClearZone" color="#f44336" textColor="White" fontSize="16" fontStyle="Bold">Clear Zone</Button>
+        </HorizontalLayout>
+    </VerticalLayout>
+</Panel>
