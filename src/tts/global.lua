@@ -12,9 +12,18 @@ local CONFIG = {
         reb_all = "74755a",
         rep_all = "ee97d9",
         sep_all = "ee97d9",
-        generic = "f0b81c" -- Used for minor factions
+        generic = "f0b81c" 
     },
-    spawnHeight = 5, -- How high above the zone to drop the units
+    otsBack = "https://images.swarmada.wiki/images/offensive-retro-rear.webp",
+    missionBack = "https://images.swarmada.wiki/images/objective-rear.webp",
+    factionCardBacks = {
+        emp_all = "https://images.swarmada.wiki/images/empire-squadron-rear.webp",
+        reb_all = "https://images.swarmada.wiki/images/rebel-squadron-rear.webp",
+        rep_all = "https://images.swarmada.wiki/images/republic-squadron-rear.webp",
+        sep_all = "https://images.swarmada.wiki/images/separatist-squadron-rear.webp",
+        generic = "https://images.swarmada.wiki/images/objective-rear.webp"
+    },
+    spawnHeight = 5,
     shakenBag = "a25e12"
 }
 
@@ -28,11 +37,11 @@ function toggleImporterMenu(player, value, id)
     
     if isMenuOpen then
         UI.setAttribute("ArmyImporterPanel", "active", "true")
-        UI.setAttribute("ToggleImporterBtn", "color", "#f44336") -- Changes to red when open
+        UI.setAttribute("ToggleImporterBtn", "color", "#f44336")
         UI.setAttribute("ToggleImporterBtn", "text", "Close Menu")
     else
         UI.setAttribute("ArmyImporterPanel", "active", "false")
-        UI.setAttribute("ToggleImporterBtn", "color", "#4CAF50") -- Changes back to green
+        UI.setAttribute("ToggleImporterBtn", "color", "#4CAF50")
         UI.setAttribute("ToggleImporterBtn", "text", "List Import")
     end
 end
@@ -47,23 +56,31 @@ function onJSONInputChanged(player, value, id)
 end
 
 function onClickClearZone(player, value, id)
+    -- 1. Clear the physical deployment zone
     local spawnZoneGUID = CONFIG.zones[player.color]
     if spawnZoneGUID then
         local spawnZone = getObjectFromGUID(spawnZoneGUID)
         if spawnZone then
             for _, obj in ipairs(spawnZone.getObjects()) do
-                -- Prevent the script from deleting the physical table or the zone itself
                 if obj.type ~= "Surface" and obj.type ~= "Board" and obj ~= spawnZone then
                     obj.destruct()
                 end
             end
-            broadcastToColor("Deployment zone cleared.", player.color, "Green")
         end
     end
+
+    -- 2. Clear the player's hand
+    local handObjects = Player[player.color].getHandObjects()
+    if handObjects then
+        for _, obj in ipairs(handObjects) do
+            obj.destruct()
+        end
+    end
+
+    broadcastToColor("Deployment zone and hand cleared.", player.color, "Green")
 end
 
 function onClickImport(player, value, id)
-    -- Use the tracking variable instead of UI.getAttribute
     local jsonString = currentJSONString
     
     if jsonString == nil or jsonString == "" then
@@ -71,7 +88,6 @@ function onClickImport(player, value, id)
         return
     end
 
-    -- Attempt to decode the JSON
     local success, armyData = pcall(function() return JSON.decode(jsonString) end)
 
     if not success or armyData == nil then
@@ -79,13 +95,11 @@ function onClickImport(player, value, id)
         return
     end
 
-    -- Validate it is a Regiment list
     if not armyData.metadata or not armyData.metadata.faction_id then
         broadcastToColor("Import Error: JSON is missing Regiment metadata.", player.color, "Red")
         return
     end
 
-    -- Determine Spawn Zone based on Player Color
     local spawnZoneGUID = CONFIG.zones[player.color]
     if spawnZoneGUID == nil or spawnZoneGUID == "" or string.find(spawnZoneGUID, "TODO") then
         broadcastToColor("Import Error: Spawn zone not configured for player color " .. player.color, player.color, "Red")
@@ -98,11 +112,9 @@ function onClickImport(player, value, id)
         return
     end
 
-    -- Clear the UI input and announce success
     UI.setAttribute("JSONInput", "text", "")
     broadcastToColor("Successfully parsed list for " .. armyData.metadata.faction_name, player.color, "Green")
 
-    -- Trigger the Spawner
     spawnArmy(armyData, spawnZone, player.color)
 end
 
@@ -111,7 +123,6 @@ end
 -- ==========================================
 function buildUnitDescription(unit)
     local desc = ""
-    
     desc = desc .. "Min Move: " .. (unit.mv_min and (unit.mv_min .. '"') or "N/A") .. "\n"
     desc = desc .. "Max Move: " .. (unit.mv and (unit.mv .. '"') or "N/A") .. "\n"
     desc = desc .. "Ranged Attack: " .. (unit.atk_ranged and (unit.atk_ranged .. " Dice") or "N/A") .. "\n"
@@ -119,12 +130,44 @@ function buildUnitDescription(unit)
     desc = desc .. "Short Range: " .. (unit.rng_short and (unit.rng_short .. '"') or "N/A") .. "\n"
     desc = desc .. "Long Range: " .. (unit.rng_long and (unit.rng_long .. '"') or "N/A") .. "\n"
     desc = desc .. "Wounds: " .. (unit.wnd or "N/A") .. "\n"
+    desc = desc .. "Courage: " .. (unit.courage or "N/A") .. "\n"
     desc = desc .. "Save: " .. (unit.sv or "N/A") .. "\n"
     
     if unit.keywords and #unit.keywords > 0 then
         desc = desc .. "Keywords: " .. table.concat(unit.keywords, ", ")
     end
+    return desc
+end
+
+function buildOTSDescription(ots)
+    local desc = "Category: " .. (ots.category or "Support") .. "\n"
+    desc = desc .. "Shape: " .. (ots.shape or "N/A") .. "\n"
+    desc = desc .. "Duration: " .. (ots.duration or "Instant") .. "\n\n"
     
+    if ots.details then
+        desc = desc .. "MECHANICS:\n"
+        for k, v in pairs(ots.details) do
+            local cleanKey = string.gsub(k, "_", " ")
+            cleanKey = string.gsub(cleanKey, "^%l", string.upper)
+            desc = desc .. "- " .. cleanKey .. ": " .. tostring(v) .. "\n"
+        end
+        desc = desc .. "\n"
+    end
+
+    if ots.modifier_keywords and #ots.modifier_keywords > 0 then
+        desc = desc .. "Keywords: " .. table.concat(ots.modifier_keywords, ", ") .. "\n\n"
+    end
+
+    desc = desc .. "ABILITY:\n" .. (ots.ability_text or "No text provided.")
+    return desc
+end
+
+function buildMissionDescription(msn)
+    local desc = "Category: " .. (msn.category or "Scenario") .. "\n\n"
+    desc = desc .. "SETUP:\n" .. (msn.setup or "Standard setup.") .. "\n\n"
+    desc = desc .. "SCORING:\n" .. (msn.scoring or "Standard scoring.") .. "\n\n"
+    desc = desc .. "VICTORY:\n" .. (msn.victory or "Most VPs wins.") .. "\n\n"
+    desc = desc .. "SPECIAL RULES:\n" .. (msn.special_rules or "None.")
     return desc
 end
 
@@ -136,6 +179,7 @@ unitInstanceId = "%s"
 maxWounds = %d
 currentWounds = %d
 targetWorldHeight = %f
+courageValue = %d
 isShaken = false
 buttonsVisible = false
 hideTime = 0
@@ -146,22 +190,22 @@ function onLoad()
     self.createButton({ click_function="doNothing", function_owner=self, label=tostring(currentWounds).."/"..tostring(maxWounds), position={0, 0, 0}, width=0, height=0, font_size=0, font_color={1,1,1}, color={0,0,0,0.85} })
     self.createButton({ click_function="addWound", function_owner=self, label="+", position={0, 0, 0}, width=0, height=0, font_size=0, color={0.2,0.8,0.2}, font_color={1,1,1} })
     self.createButton({ click_function="toggleShakenLocal", function_owner=self, label="Shaken", position={0, 0, 0}, width=0, height=0, font_size=0, color={0.5,0.5,0.5}, font_color={1,1,1} })
+    self.createButton({ click_function="doNothing", function_owner=self, label="C: "..tostring(courageValue), position={0, 0, 0}, width=0, height=0, font_size=0, font_color={1,1,1}, color={0,0,0,0} })
 end
 
 function showButtons()
     buttonsVisible = true
-    
     local yOffset = targetWorldHeight / self.getScale().y
-    
     self.editButton({index=0, position={-0.65, yOffset, 0}, width=250, height=250, font_size=150})
     self.editButton({index=1, position={0, yOffset, 0}, width=400, height=250, font_size=120})
     self.editButton({index=2, position={0.65, yOffset, 0}, width=250, height=250, font_size=150})
     self.editButton({index=3, position={0, yOffset, 0.5}, width=600, height=200, font_size=100})
+    self.editButton({index=4, position={0, yOffset, -0.5}, width=400, height=200, font_size=100})
 end
 
 function hideButtons()
     buttonsVisible = false
-    for i=0,3 do self.editButton({index=i, position={0, 0, 0}, width=0, height=0, font_size=0}) end
+    for i=0,4 do self.editButton({index=i, position={0, 0, 0}, width=0, height=0, font_size=0}) end
 end
 
 function onHover(player_color)
@@ -188,102 +232,59 @@ function spawnArmy(armyData, spawnZone, playerColor)
     local originPos = spawnZone.getPosition()
     local scale = spawnZone.getScale()
     
-    -- Calculate grid limits based on the zone's width
     local startX = originPos.x - (scale.x / 2) + 2
     local rightEdgeX = originPos.x + (scale.x / 2) - 2
-    
     local currentPos = {x = startX, y = originPos.y + 2, z = originPos.z}
     local unitSpacing = 4
-    
-    local tintPalette = {
-        {r=1, g=1, b=1},       -- 1st: White (Default)
-        {r=1, g=0.2, b=0.2},   -- 2nd: Red
-        {r=0.2, g=0.2, b=1},   -- 3rd: Blue
-        {r=0.1, g=0.54, b=0.1},   -- 4th: Green
-        {r=1, g=1, b=0.2},     -- 5th: Yellow
-        {r=0.8, g=0.2, b=0.8},  -- 6th: Purple
-        {r=1, g=0.5, b=0},     -- 7th: Orange
-        {r=0.2, g=0.8, b=0.8},  -- 8th: Cyan
-        {r=0.5, g=0.2, b=0}     -- 9th: Brown
-    }
-    
-    local unitInstanceCounts = {}
 
-    -- Spawn Combat Units
+    local tintPalette = {
+        {r=1, g=1, b=1}, {r=1, g=0.2, b=0.2}, {r=0.2, g=0.2, b=1},
+        {r=0.1, g=0.54, b=0.1}, {r=1, g=1, b=0.2}, {r=0.8, g=0.2, b=0.8},
+        {r=1, g=0.5, b=0}, {r=0.2, g=0.8, b=0.8}, {r=0.5, g=0.2, b=0}
+    }
+    local unitInstanceCounts = {}
+    
+    -- 1. Spawn Combat Units
     if armyData.units then
         for _, unit in ipairs(armyData.units) do
             local description = buildUnitDescription(unit)
-            
-            if not unitInstanceCounts[unit.id] then
-                unitInstanceCounts[unit.id] = 0
-            end
+            if not unitInstanceCounts[unit.id] then unitInstanceCounts[unit.id] = 0 end
 
             for q = 1, unit.quantity do
                 unitInstanceCounts[unit.id] = unitInstanceCounts[unit.id] + 1
-                
                 local currentUnitId = unit.id .. "_" .. q
-                local tintIndex = ((unitInstanceCounts[unit.id] - 1) % #tintPalette) + 1
-                local unitTint = tintPalette[tintIndex]
+                local unitTint = tintPalette[((unitInstanceCounts[unit.id] - 1) % #tintPalette) + 1]
 
                 for b = 1, unit.unit_size do
-                    local spawnParams = {
-                        type = "Custom_Model",
-                        -- Spawns bases side-by-side in a column instead of a vertical tower
-                        position = {x = currentPos.x, y = currentPos.y, z = currentPos.z - (b * 1.5)},
-                        rotation = {x = 0, y = 0, z = 0}
-                    }
-                    
-                    local spawnedModel = spawnObject(spawnParams)
-                    
-                    local costString = ""
-                    if unit.cost then costString = " [" .. unit.cost .. " pts]" end
-                    spawnedModel.setName(unit.name .. costString)
-                    spawnedModel.setDescription(description)
-                    spawnedModel.setColorTint(unitTint)
-                    
-                    spawnedModel.setCustomObject({
-                        mesh = unit.tts_model or "",
-                        diffuse = unit.tts_texture or "",
-                        collider = unit.tts_collider or "",
-                        type = 1, 
-                        material = 1 
-                    })
+                    if unit.tts_model and unit.tts_model ~= "" then
+                        local spawnedModel = spawnObject({
+                            type = "Custom_Model",
+                            position = {x = currentPos.x, y = currentPos.y, z = currentPos.z - (b * 1.5)},
+                            rotation = {x = 0, y = 0, z = 0}
+                        })
+                        spawnedModel.setName(unit.name .. " [" .. unit.cost .. " pts]")
+                        spawnedModel.setDescription(description)
+                        spawnedModel.setColorTint(unitTint)
+                        spawnedModel.setCustomObject({
+                            mesh = unit.tts_model,
+                            diffuse = unit.tts_texture or "",
+                            collider = unit.tts_collider or "",
+                            type = 1, material = 1 
+                        })
+                        spawnedModel.setLuaScript(string.format(BASE_SCRIPT_TEMPLATE, currentUnitId, unit.wnd or 1, unit.wnd or 1, unit.tts_height or 2.0, unit.courage or 0))
+                    end
+                end
 
-                    local wndStat = unit.wnd or 1
-                    local uiHeight = unit.tts_height or 2.0 
-                    
-                    local injectedScript = string.format(BASE_SCRIPT_TEMPLATE, currentUnitId, wndStat, wndStat, uiHeight)
-                    spawnedModel.setLuaScript(injectedScript)
-                end
-                
-                -- Faction Token Logic
-                local bagGUID = CONFIG.factionBags[armyData.metadata.faction_id]
-                local isGeneric = false
-                
-                if bagGUID == nil then
-                    bagGUID = CONFIG.factionBags.generic
-                    isGeneric = true
-                end
-                
+                -- Spawn Initiative Token
+                local bagGUID = CONFIG.factionBags[armyData.metadata.faction_id] or CONFIG.factionBags.generic
                 local tokenBag = getObjectFromGUID(bagGUID)
                 if tokenBag then
-                    local tokenPos = {x = currentPos.x, y = currentPos.y + 0.5, z = currentPos.z + 4}
-                    local token = tokenBag.takeObject({
-                        position = tokenPos,
-                        smooth = false
-                    })
-                    
-                    if isGeneric then
-                        token.setColorTint(Color.fromString(playerColor))
-                    end
-                else
-                    broadcastToColor("Warning: Faction bag not found.", playerColor, "Red")
+                    local token = tokenBag.takeObject({ position = {x = currentPos.x, y = currentPos.y + 0.5, z = currentPos.z + 4}, smooth = false })
+                    if bagGUID == CONFIG.factionBags.generic then token.setColorTint(Color.fromString(playerColor)) end
                 end
-                
+
                 currentPos.x = currentPos.x + unitSpacing
-                
-                -- Wrap to a new row if we hit the edge of the spawn zone
-                if currentPos.x > rightEdgeX then
+                if currentPos.x > rightEdgeX - 6 then 
                     currentPos.x = startX
                     currentPos.z = currentPos.z - 4
                 end
@@ -291,61 +292,71 @@ function spawnArmy(armyData, spawnZone, playerColor)
         end
     end
 
-    -- Spawn Support Assets (Leader and OTS) behind the main army
-    local supportPos = {x = originPos.x, y = originPos.y + 2, z = originPos.z - 4}
+    -- 2. Leader Row (Top Right)
+    local layoutZ = originPos.z + (scale.z / 2) - 2
+    local layoutX = originPos.x + (scale.x / 2) - 2
 
     if armyData.leader and armyData.leader.id then
-        local leaderDesc = "Ability: " .. (armyData.leader.ability or "None")
-        local leaderObj = spawnObject({
-            type = "Custom_Tile",
-            position = {x = supportPos.x, y = supportPos.y, z = supportPos.z},
-            rotation = {x = 0, y = 0, z = 0}
-        })
-        
-        local leaderCost = ""
-        if armyData.leader.cost then leaderCost = " [" .. armyData.leader.cost .. " pts]" end
-        leaderObj.setName(armyData.leader.name .. leaderCost)
-        leaderObj.setDescription(leaderDesc)
-        
-        leaderObj.setCustomObject({
-            image = armyData.leader.tts_image or "",
-            type = 0, 
-            thickness = 0.1
-        })
-        
-        supportPos.x = supportPos.x + unitSpacing
+        local leader = armyData.leader
+        local leaderDesc = "Ability: " .. (leader.ability or "None")
+        if leader.restriction_text and leader.restriction_text ~= "" then leaderDesc = leaderDesc .. "\nRestriction: " .. leader.restriction_text end
+
+        if leader.tts_model and leader.tts_model ~= "" then
+            local leaderObj = spawnObject({ type = "Custom_Model", position = {layoutX, originPos.y + 2, layoutZ}, rotation = {0,180,0} })
+            leaderObj.setName(leader.name .. " [" .. (leader.cost or 0) .. " pts]")
+            leaderObj.setDescription(leaderDesc)
+            leaderObj.setCustomObject({ mesh = leader.tts_model, diffuse = leader.tts_texture or "", type = 1, material = 1 })
+            layoutX = layoutX - 4
+        elseif leader.tts_image and leader.tts_image ~= "" then
+            local leaderObj = spawnObject({ type = "Custom_Tile", position = {layoutX, originPos.y + 2, layoutZ}, rotation = {0,180,0} })
+            leaderObj.setName(leader.name .. " [" .. (leader.cost or 0) .. " pts]")
+            leaderObj.setDescription(leaderDesc)
+            leaderObj.setCustomObject({ image = leader.tts_image, type = 0, thickness = 0.1, material = 1 })
+            layoutX = layoutX - 4
+        end
+
+        if leader.tts_card_front and leader.tts_card_front ~= "" then
+            local ldrCard = spawnObject({ type = "CardCustom", position = {layoutX, originPos.y + 2, layoutZ}, rotation = {0,180,0}, scale = {1.25, 1.0, 1.25} })
+            ldrCard.setName(leader.name .. " Card")
+            ldrCard.setDescription(leaderDesc)
+            ldrCard.setCustomObject({ face = leader.tts_card_front, back = CONFIG.factionCardBacks[armyData.metadata.faction_id] or CONFIG.factionCardBacks.generic })
+            layoutX = layoutX - 4
+        end
     end
 
+    -- 3. Mission Row (Resetting X, Shifting Z Down)
+    layoutX = originPos.x + (scale.x / 2) - 2 
+    layoutZ = layoutZ - 6                    
+
+    if armyData.missions then
+        for _, msn in ipairs(armyData.missions) do
+            if msn.tts_card_front and msn.tts_card_front ~= "" then
+                local msnObj = spawnObject({ 
+                    type = "CardCustom", 
+                    position = {layoutX, originPos.y + 2, layoutZ}, 
+                    rotation = {0,180,180}, -- Facedown
+                    scale = {1.65, 1.0, 1.65} 
+                })
+                msnObj.setName(msn.name)
+                msnObj.setDescription(buildMissionDescription(msn))
+                msnObj.setCustomObject({ face = msn.tts_card_front, back = CONFIG.missionBack })
+                layoutX = layoutX - 4
+            end
+        end
+    end
+
+    -- 4. OTS (Deal to Hand)
     if armyData.ots then
+        local otsPos = {x = originPos.x - 5, y = originPos.y + 3, z = originPos.z - 10}
         for _, ots in ipairs(armyData.ots) do
             for q = 1, (ots.quantity or 1) do
-                local otsDesc = ""
-                otsDesc = otsDesc .. "Availability: " .. (ots.availability or "N/A") .. "\n"
-                otsDesc = otsDesc .. "Template: " .. (ots.template or "N/A") .. "\n"
-                otsDesc = otsDesc .. "Attack Dice: " .. (ots.attack_dice or "N/A") .. "\n"
-                if ots.keywords and #ots.keywords > 0 then
-                    otsDesc = otsDesc .. "Keywords: " .. table.concat(ots.keywords, ", ")
+                if ots.tts_card_front and ots.tts_card_front ~= "" then
+                    local otsObj = spawnObject({ type = "CardCustom", position = otsPos, rotation = {0,180,0}, scale = {1.25, 1.0, 1.25} })
+                    otsObj.setName(ots.name .. " [" .. (ots.cost or 0) .. " pts]")
+                    otsObj.setDescription(buildOTSDescription(ots))
+                    otsObj.setCustomObject({ face = ots.tts_card_front, back = CONFIG.otsBack })
+                    Wait.frames(function() if otsObj then otsObj.deal(1, playerColor) end end, 2)
                 end
-
-                local otsObj = spawnObject({
-                    type = "CardCustom",
-                    position = {x = supportPos.x, y = supportPos.y, z = supportPos.z},
-                    rotation = {x = 0, y = 0, z = 0}
-                })
-                
-                local otsCost = ""
-                if ots.cost then otsCost = " [" .. ots.cost .. " pts]" end
-                otsObj.setName(ots.name .. otsCost)
-                otsObj.setDescription(otsDesc)
-                
-                otsObj.setCustomObject({
-                    face = ots.tts_card_front or "",
-                    back = ots.tts_card_front or "",
-                    width = 2,
-                    height = 3
-                })
-                
-                supportPos.x = supportPos.x + unitSpacing
             end
         end
     end
@@ -387,7 +398,6 @@ function syncUnitWounds(params)
     local allObjects = getAllObjects()
     for _, obj in ipairs(allObjects) do
         if obj.getVar("unitInstanceId") == params.unitId then
-            -- Call the local base script to update the wound values and label
             obj.call("setWounds", params.newWounds)
         end
     end
